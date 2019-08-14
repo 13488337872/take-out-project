@@ -1,0 +1,138 @@
+@charset "utf-8";
+html,body,div,p,form,label,ul,li,dl,dt,dd,ol,img,button,b,em,strong,small,h1,h2,h3,h4,h5,h6{margin:0;padding:0;border:0;list-style:none;font-style:normal;}
+body{font-family:SimHei,'Helvetica Neue',Arial,'Droid Sans',sans-serif,'微软雅黑';font-size:14px;color:#333;}
+a, a.link{color:#666;text-decoration:none;font-weight:500;}
+a, a.link:hover{color:#666;}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+html{
+    font-size: 26.67vw;
+}
+html,body{
+	 height: 100%;
+}
+body>div{
+	height: inherit;
+	display: -webkit-flex;
+	flex-direction: column;
+}
+/* 头部开始 */
+.address-top{
+    position: relative;
+    width: 100%;
+    padding: 0 .15rem;
+    height: .44rem;
+    line-height: .44rem;
+    box-sizing: border-box;
+}
+.address-top i{
+    position: absolute;
+}
+.address-top h2{
+    text-align: center;
+    font-size: .16rem;
+    font-weight: 600;
+}
+/* 中心 */
+.address-content{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 .15rem;
+}
+.address-content li{
+    height: .455rem;
+    padding-left: .01rem;
+    border-bottom: 1px solid #f4f4f4;
+    line-height: .455rem;
+}
+.address-content li h3{
+    float: left;
+    font-size: .13rem;
+    color: #333333;
+    margin-right: .195rem;
+}
+.address-content li p{
+    float: left;
+    position: relative;
+    width: 2.64rem;
+}
+.address-content li p input{
+    height: .455rem;
+    border: 0;
+    width: 2.49rem;
+    padding: 0 0 0 .15rem;
+}
+.address-content li p input::-webkit-input-placeholder{
+    color: #999999;
+    font-size: .13rem;
+}
+.address-content li p .dizhi{
+    position: absolute;
+    left: 0;
+    color: #999999;
+}
+.address-content li p .jiantou{
+    position: absolute;
+    right: 0;
+}
+.address-content .linkman{
+    height: .995rem;
+}
+.address-content .linkman p input{
+    border-bottom: 1px solid #f4f4f4;
+}
+.linkman .sex{
+    float: left;
+    margin-left: .8rem;
+}
+.linkman .sex img{
+    width: .18rem;
+    height: .18rem;
+    margin-right: .11rem;
+    vertical-align: middle;
+}
+.linkman .sex img:last-child{
+    margin-left: .215rem;
+}
+.address-content .label{
+    border-bottom: 0;
+}
+.label p{
+    padding-left: .15rem;
+}
+.label p span{
+    float: left;
+    width: .45rem;
+    height: .22rem;
+    margin-right: .15rem;
+    border: 1px solid #c4c4c4;
+    text-align: center;
+    line-height: .22rem;
+    margin-top: .13rem;
+}
+.saveAdress{
+    margin-top: .3rem;
+    height: .4rem;
+    width: 3.45rem;
+    text-align: center;
+    line-height: .4rem;
+    background: #f7d273;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

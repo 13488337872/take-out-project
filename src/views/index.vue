@@ -1,13 +1,21 @@
 <template>
-  <r-footer :data="navdata"></r-footer>
+    <div>
+        <index-header></index-header>
+        <index-center :data="navdata"></index-center> 
+        <index-footer :data="navdata.Activity"></index-footer> 
+    </div>
 </template>
 
 <script>
-import rfooter from '../components/HelloWorld'
+import indexHeader from '../components/distribution/index-header'
+import indexCenter from '../components/distribution/index-center'
+import indexFooter from '../components/common/index-footer'
 import index from '../apis/index'
     export default{
         components:{
-            "r-footer":rfooter
+            "index-header":indexHeader,
+            "index-center":indexCenter,
+            "index-footer":indexFooter
         },
         data() {
             return {
@@ -17,20 +25,28 @@ import index from '../apis/index'
         created() {
             this._initPageData()
         },
+        mounted() {
+        },
         methods: {
-        /**
-        * @private
-        */
-        _initPageData() {
-            index.getCartInfoByUserId(data => {
-                console.log(data)
-                this.navdata = data;
-            })
-        },
-        },
+            /**
+            * @private
+            */
+            _initPageData() {
+                index.getCartInfoByUserId(data => {
+                    this.navdata = data;
+                })
+            },
+            
+        }
     }
 </script>
 
-<style>
-</style>
+<style scoped>
 
+@import "../assets/index.css";
+
+
+
+
+
+</style>
