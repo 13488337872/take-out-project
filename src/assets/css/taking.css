@@ -1,0 +1,206 @@
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,textarea,select,td,th{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul,ol{
+	list-style: none;
+}
+html,body{
+	height: 100%;
+}
+body{
+	font-family: "微软雅黑";
+	display: -webkit-flex;
+	/* -webkit-flex-direction:column;
+	background: #f5f5f9; */
+	-webkit-flex-direction:column;
+	/* background:#f2f2f2; */
+}
+img{
+	border: none;
+	display: block;
+}
+html{
+	font-size: 26.67vw;
+}
+
+/* header */
+.mt-order-head{
+	width:100%;
+	height:.43rem;
+	background:#fff;
+	text-align:center;
+	line-height: .43rem;
+	display: -webkit-flex;
+	position:relative;
+	/* -webkit-justify-content:space-between; */
+}
+.mt-order-head span{
+	font-size:.16rem;
+	margin:0 auto;
+	font-weight:600;
+	display:block;
+}
+#search{
+	width:.18rem;
+	height:.18rem;
+	position:absolute;
+	top:.15rem;
+	right:.56rem;
+}
+#msg{
+	width:.16rem;
+	height:.19rem;
+	position:absolute;
+	top:.14rem;
+	right:.16rem;
+}
+/* 三个选项 */
+.taking_checkbox{
+	width:100%;
+	height:.3rem;
+	background:#fff;
+	display: -webkit-flex;
+	-webkit-justify-content:space-around;
+	padding-top:.16rem;
+}
+.taking_checkbox h2{
+	font-size:.13rem;
+	font-weight:200;
+}
+.taking_checkbox span{
+	width:.2rem;
+	height:.01rem;
+	background:#ffd161;
+	display:block;
+	margin:.07rem auto;
+}
+.taking_checkbox_left,.taking_checkbox_center,.taking_checkbox_right{
+	width:.55rem;
+	height:.2rem;
+	text-align:center;
+}
+#checkbox_sec_span,#checkbox_thd_span{
+	display:none;
+}
+
+/* section */
+.mt-order-section{
+	width:100%;
+	/* display:none; */
+}
+.taking_section_store{
+	width:3.51rem;
+	height:1.68rem;
+	background:#fafafa;
+	margin:.1rem auto;
+	border-radius: .09rem;
+}
+.taking_store_top{
+	height:.38rem;
+	width:3.29rem;
+	margin:0 auto;
+	padding:.15rem 0 .12rem 0;
+	display: -webkit-flex;
+	-webkit-justify-content:space-between;
+}
+.taking_store_top img{
+	width:.36rem;
+	height:.36rem;
+}
+.store_top_cen p{
+	font-size:.13rem;
+}
+.store_top_cen span{
+	font-size:.09rem;
+	color:#fb4e44;
+	width:.42rem;
+	height:.16rem;
+	display:inline-block;
+	border:1px solid #fb4e44;
+	text-align: center;
+	line-height:.16rem;
+	border-radius: .02rem;
+	float:left;
+	margin-right:.05rem;
+	margin-top:.08rem;
+}
+.store_top_cen{
+	margin-right:.42rem;
+	margin-left:.1rem;
+}
+.taking_store_top h4{
+	font-size:.07rem;
+	color:#666;
+}
+.store_top_rig{
+	height:.36rem;
+	line-height:.36rem;
+}
+/* 下部分 */
+.taking_store_bot{
+	background:#fff;
+	width:3.39rem;
+	height:.84rem;
+	padding-right: .12rem;
+	padding-top:.18rem;
+	border-radius: 0 0 .09rem .09rem;
+}
+.store_bot_tit{
+	display: -webkit-flex;
+	-webkit-justify-content:space-between;
+	padding-left: .66rem;
+}
+.store_bot_tit p{
+	width:1.83rem;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	font-size:.13rem;
+	color:#666666;
+	
+}
+.store_bot_tit span{
+	font-size:.13rem;
+}
+/* 评价 */
+.store_bot_span{
+	width:2.39rem;
+	margin-left:1.01rem;
+	margin-top:.21rem;
+	display: -webkit-flex;
+	-webkit-justify-content:space-between;
+	font-size:.13rem;
+}
+.store_bot_span span{
+	width: .73rem;
+	height:.32rem;
+	border:1px solid #c4c4c4;
+	text-align:center;
+	line-height:.32rem;
+	border-radius: .04rem;
+}
+#store_bot_lan{
+	background: #ffd161;
+	border:0;
+}
+
+/* 退款 */
+artical{
+	width:100%;
+	height:100%;
+	background:url(../img/taking/bg.png);
+	background-size:100% 98%;
+	display:none;
+	position:relative;
+}
+artical span{
+	font-size:.13rem;
+	color:#747273;
+	position:absolute;
+	top:56%;
+	left:39%;
+}

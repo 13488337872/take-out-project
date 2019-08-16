@@ -1,0 +1,261 @@
+html,body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd,input,textarea,select,td,th{
+	margin:0;
+	padding:0;
+}
+
+html,body{
+	 height: 100%;
+}
+
+html{
+	font-size: 26.67vw;
+}
+
+img{
+	border: 0;
+	display: block;
+}
+a{
+	text-decoration: none;
+}
+em{
+	font-style: normal;
+}
+ul,ol,li{
+	list-style: none;
+}
+
+
+/* header */
+header{
+    width: 100%;
+    height: .53rem;
+    background-color: #4c9b6b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: .07rem .16rem .05rem;
+}
+header .icon-shangyiye{
+    font-size: .18rem;
+    color: #dffff6;
+}
+header .icon-fangdajing{
+    font-size: .18rem;
+    color: #f6fffa;
+}
+header .header-c-daodianzq h3{
+	font-size: .24rem;
+	color: #fffcff;
+	font-style: italic;
+	font-weight: normal;
+}
+header .header-c-daodianzq p{
+	font-size: .11rem;
+	color: #88d3aa;
+}
+header .header-c-daodianzq{
+	text-align: center;
+}
+
+/* scroll-box */
+.scroll-box{
+	flex:1;
+	overflow-y:  scroll;
+}
+/* fujin */
+.fujin{
+	width: 100%;
+	background-color: #4c9b6b;
+	font-size: .15rem;
+	color: #d8fff3;
+	display: flex;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: .075rem .94rem .5rem .16rem;
+}
+/* fujintemai */
+/* tit */
+.fujintemai{
+	display: flex;
+	box-sizing: border-box;
+}
+#fujintemai-bgi-le{
+	width: .16rem;
+	height: 2.14rem;
+	background: url(/img/fujin-le.jpg) repeat ;
+	background-size: 100% 100%;
+}
+#fujintemai-bgi-ri{
+	width: .16rem;
+	height: 2.14rem;
+	background: url(/img/fujin-ri.jpg) repeat ;
+	background-size: 100% 100%;
+}
+.fujintemai .fujintemai-c{
+	border-top-right-radius: 30%;
+	border-top-left-radius: 30%;
+	background-color: #fff;
+	height: 2.14rem;
+	flex: 1;
+	box-sizing: border-box;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit{
+	border-top-right-radius: 30%;
+	border-top-left-radius: 30%;
+	box-sizing: border-box;
+	padding: .18rem .12rem .14rem .12rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-le{
+	width: 1.62rem;
+
+	display: flex;
+	justify-content: space-between;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-le .icon-icon-test{
+	font-size: .16rem;
+	color: #e1692c;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-le  .icon-icon-test+span{
+	font-size: .15rem;
+	color: #292826;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-le span:last-child{
+	font-size: .11rem;
+	color: #8b898a;
+	margin-top: .04rem;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-ri{
+	color: #5e5e5e;
+	font-size: .12rem;
+}
+.fujintemai .fujintemai-c .fujintemai-c-tit-ri .icon-xiayiyehouyiye{
+	font-size: .08rem;
+	color: #909090;
+}
+/* meal */
+.fujintemai .fujintemai-c .fujintemai-c-mealist{
+	box-sizing: border-box;
+	padding: 0 0 .17rem .12rem;
+	display: flex;
+}
+.fujintemai .fujintemai-c .fujintemai-c-mealist .fujintemai-c-mealist-meal{
+	margin-right: .12rem;
+} 
+.fujintemai .fujintemai-c .fujintemai-c-mealist .fujintemai-c-mealist-meal img{
+	width: 1.41rem;
+	height: 1.14rem;
+}
+.fujintemai .fujintemai-c .fujintemai-c-mealist .fujintemai-c-mealist-meal p:first-of-type{
+	font-size: .12rem;
+	color: #343537;
+}
+.fujintemai .fujintemai-c .fujintemai-c-mealist .fujintemai-c-mealist-meal p:last-of-type{
+	font-size: .12rem;
+	color: #f0615b;
+}
+
+/* nav */
+nav{
+	width: 100%;
+	height: 1.02rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	box-sizing: border-box;
+	padding: .25rem .11rem .1rem;
+	font-size: .11rem;
+	color: #696a6c;
+
+}
+nav li{
+	text-align: center;
+}
+nav li img{
+	width: .43rem;
+	height: .43rem;
+}
+nav li:first-child{
+	color: #43a576;
+}
+nav li:first-child img{
+	width: .54rem;
+	height: .54rem;
+}
+/* shoplist */
+.shoplist{
+	margin: 0 .09rem 0;
+	border-top: 1px solid #efefef;
+	box-sizing: border-box;
+	padding-top: .2rem;
+
+}
+.shoplist .shoplist-shop{
+	display: flex;
+	justify-content: space-between;align-items: flex-start;
+	margin-bottom: .31rem;
+}
+.shoplist .shoplist-shop img{
+	width: .78rem;
+	height: .58rem;
+}
+.shoplist .shoplist-shop .shoplist-shop-c{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:first-child{
+	font-size: .14rem;
+	color: #32312f;
+	font-weight: 900;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(2){
+	width: .5rem;
+	font-size: .1rem;
+	color: #6ac08f;
+	text-align: center;
+	border: 1px solid #aebdb8;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(3){
+	font-size: .11rem;
+	color: #787878;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(3) span:nth-of-type(1){
+	color: #f1a243;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(4){
+	display: flex;
+	justify-content: space-around;
+}
+.shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(4) span{
+	font-size: .11rem;
+	color: #ee605e;
+	text-align: center;
+	border: 1px solid #e3d0d2;
+
+}
+.shoplist .shoplist-shop .shoplist-shop-ri{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-around;
+}
+.shoplist .shoplist-shop .shoplist-shop-ri span{
+	display: block;
+	color: #000;
+	font-size: .08rem;
+}
+.shoplist .shoplist-shop .shoplist-shop-ri .icon-daohangdizhiweizhi{
+	font-size: .23rem;
+}
+.shoplist .shoplist-shop .shoplist-shop-ri .iconfont icon-xiala{
+	font-size: .06rem;
+}
+.shoplist .shoplist-shop .shoplist-shop-ri img{
+	width: .48rem;
+	height: .14rem;
+}

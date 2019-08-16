@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+body,
+p,
+ul,
+ol,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+select,
+textarea,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 26.67vw;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: "微软雅黑";
+    background: #f7f7f8;
+    display: flex;
+    flex-direction: column;
+    padding-left: .11rem;
+    padding-right: .11rem;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    display: block;
+}
+
+
+/* header部分 */
+
+.he {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: .99rem;
+    /* background: yellow; */
+    padding: 0 .13rem;
+    box-sizing: border-box;
+}
+
+.deng {
+    display: flex;
+    align-items: center;
+}
+
+.deng img {
+    width: .45rem;
+    height: .45rem;
+    padding-right: .1rem;
+}
+
+.deng h4 {
+    font-size: .18rem;
+    color: #333333;
+}
+
+.set {
+    display: flex;
+    align-items: center;
+}
+
+.set img {
+    width: .21rem;
+}
+
+.set img:last-child {
+    padding-left: .26rem;
+}
+
+
+/* redlist部分 */
+
+.redlist {
+    width: 100%;
+    background: white;
+    height: .97rem;
+    margin-bottom: .11rem;
+    border-radius: 3%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 .1rem;
+    box-sizing: border-box;
+}
+
+.packet img {
+    width: .22rem;
+    height: .24rem;
+    padding-bottom: .1rem;
+    margin: 0 auto;
+}
+
+.packet p {
+    font-size: .11rem;
+    text-align: center;
+}
+
+
+.mt-my-redlist-center{
+    background: #f0f0f0;
+    padding-top: .1rem;
+    background: #f0f0f0;
+    padding: .1rem .1rem 0;
+}
+
+/* function部分 */
+
+.moisturises {
+    width: 100%;
+    border-radius: 3%;
+    background: white;
+    margin-bottom: .11rem;
+}
+
+.moisturises h5 {
+    font-size: .13rem;
+    padding-left: .13rem;
+    padding-top: .15rem;
+}
+
+.me {
+    height: 1.43rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.address {
+    width: 24%;
+}
+
+.address img {
+    width: .18rem;
+    height: .2rem;
+    margin: 0 auto;
+    padding-bottom: .12rem;
+}
+
+.address p {
+    font-size: .11rem;
+    text-align: center;
+}
+
+
+/* service部分 */
+
+.service {
+    width: 100%;
+    border-radius: 3%;
+    background: white;
+    margin-bottom: .11rem;
+}
+
+.supplier h5 {
+    font-size: .13rem;
+    padding-left: .13rem;
+    padding-top: .15rem;
+}
+
+.help {
+    height: .8rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.helpone {
+    width: 24%;
+}
+
+.helpone img {
+    width: .18rem;
+    height: .2rem;
+    margin: 0 auto;
+    padding-bottom: .12rem;
+}
+
+.helpone p {
+    font-size: .11rem;
+    text-align: center;
+}
+
+
+/* more更多 */
+
+.more {
+    width: 100%;
+    border-radius: 3%;
+    background: white;
+    margin-bottom: .11rem;
+}
+
+.mores h5 {
+    font-size: .13rem;
+    padding-left: .13rem;
+    padding-top: .15rem;
+}
+
+.invitation {
+    height: 1.43rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.prize {
+    width: 24%;
+}
+
+.prize img {
+    width: .18rem;
+    height: .2rem;
+    margin: 0 auto;
+    padding-bottom: .12rem;
+}
+
+.prize p {
+    font-size: .11rem;
+    text-align: center;
+}

@@ -138,6 +138,7 @@ body>div{
 }
 .menu li img{
 	width: .25rem;
+	margin: 0 auto;
 }
 .menu li p{
 	font-size: .11rem;
@@ -226,7 +227,8 @@ body>div{
 	overflow-x: auto;
 }
 .askList li{
-	width: 2.15rem;
+	/* width: 2.15rem; */
+	width: 67%;
 	height: .76rem;
 	float: left;
 	flex-shrink: 0;
@@ -253,6 +255,9 @@ body>div{
 	text-align: center;
 	line-height: .15rem;
 }
+.askListBtm{
+
+}
 .askList li strong{
 	display: inline-block;
 	width: .84rem;
@@ -267,6 +272,7 @@ body>div{
 .askList li p img{
 	width: .15rem;
 	height: .15rem;
+	float: left;
 	margin-right: .05rem;
 	margin-top: .05rem;
 }
@@ -407,6 +413,7 @@ body>div{
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 .16rem;
+	height: 100%;
 }
 .footer li img{
 	width: .25rem;

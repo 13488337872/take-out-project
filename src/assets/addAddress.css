@@ -81,14 +81,19 @@ body>div{
     border-bottom: 1px solid #f4f4f4;
 }
 .linkman .sex{
-    float: left;
     margin-left: .8rem;
 }
 .linkman .sex img{
+    float: left;
     width: .18rem;
     height: .18rem;
     margin-right: .11rem;
     vertical-align: middle;
+    margin-top: .14rem;
+}
+.linkman .sex span{
+    float: left;
+    margin-right: .19rem;
 }
 .linkman .sex img:last-child{
     margin-left: .215rem;
