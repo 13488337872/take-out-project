@@ -48,7 +48,7 @@
 	height:.32rem;
 	width:2.97rem;
 	border-bottom: 1px solid #989898; 
-	padding-top: .29rem;
+	margin-top: .29rem;
 }
 .section_box_input span{
 	color:#fdce5a;
@@ -80,9 +80,9 @@
 	margin:.44rem 0 0 .4rem;
 	float:left;
 	border:0;
-	background:#f2f2f2;
+	background:#ffc132;
 	border-radius: .22rem;
-	color:#fff;
+	color:black;
 	margin-bottom:.32rem;
 	font-size:.18rem;
 }

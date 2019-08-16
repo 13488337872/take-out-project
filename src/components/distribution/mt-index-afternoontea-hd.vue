@@ -2,9 +2,11 @@
     <div class="hr"> 
         <div class="hd">
             <div class="hd-1">
-                <a href="#" class="iconfont icon-shangyiye"></a>
+                <router-link to="/">
+                    <a href="#" class="iconfont icon-shangyiye">&#xe600;</a>
+                </router-link>
+                
                 <h4>下午茶</h4>
-
             </div>
             <div class="hd-2">
                 <a href="#" class="iconfont icon-search_icon"></a>

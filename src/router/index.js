@@ -33,7 +33,6 @@ import shoppingcart from '../views/shopping-cart'
 import orderform from '../views/orderForm'
 
 
-
 //我的账号
 import mtmyid from "../views/mt-my-id"
 
@@ -44,6 +43,10 @@ import mtMyEnter from "../views/mt-my-enter"
 
 //验证码登录
 import mtMyEnterm from "../views/mt-my-enterm";
+
+
+//店铺详情
+import detail from "../views/detail";
 
 
 //菜单下午茶
@@ -116,6 +119,9 @@ let router = new VueRouter({
     },
     {
       path:"/shoppingcart",component:shoppingcart,
+    },
+    {
+      path:"/detail",component:detail,
     },
     {
       path:"/orderform",component:orderform,

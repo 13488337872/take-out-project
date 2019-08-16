@@ -40,6 +40,7 @@ html{
 	font-size:.15rem;
 	color:#f7d04d;
 	padding:.13rem 0 .13rem 0;
+	width: 100%;
 }
 .head img{
 	width:.16rem;
@@ -70,8 +71,7 @@ html{
 	margin: 0 auto;
 	height:.32rem;
 	width:2.97rem;
-	border-bottom: 1px solid #989898; 
-	padding-top: .29rem;
+	border-bottom: 1px solid #989898;
 }
 .section_box_input span{
 	color:#fdce5a;

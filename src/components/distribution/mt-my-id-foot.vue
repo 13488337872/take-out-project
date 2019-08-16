@@ -17,7 +17,7 @@
 					cancelButtonText:'取消'
 				}).then(action=>{
 					if(action=='confirm'){
-						
+						location.href="http://localhost:8080/#/mtMyRedlist"
 					}
 				}).catch(error=>{
 					if(error=='cancel'){

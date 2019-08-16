@@ -1,6 +1,9 @@
 <template>
 	<header class="mt-my-head">
-		<img src="/img/my/arr.png" alt="">
+		<router-link to="">
+			<img src="/img/my/arr.png" alt="">
+		</router-link>
+		
 		<span>我的账号</span>
 	</header>
 </template>

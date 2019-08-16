@@ -17,7 +17,7 @@
 		</div>
 		<!-- 菜单 -->
 		<div class="menu">
-			<li v-for="(item,pid) in data.menu" :key="pid">
+			<li v-for="(item,pid) in data.menu" :key="pid" @click="skip(pid)">
 				<img :src=item.menuPic alt="">
 				<p>{{item.menuName}}</p>
 			</li>
@@ -44,7 +44,27 @@ export default {
 		"index-ask":indexAsk,
 		"nearby-shops":nearbyShops,
 		"index-banner":indexBanner
-	}
+	},
+	computed: {
+		// 直接当做普通属性调用不加括号
+		// 任何data中数据变化立即重新计算
+		// 计算属性会缓存
+
+	},
+	methods: {
+		skip:function(item){
+			if(item==0){
+				location.href= "http://localhost:8080/#/mtIndexAfternoontea"
+			}
+		}
+	},
+	
+
+
+
+
+
+
 }
 </script>
 

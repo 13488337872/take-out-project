@@ -73,6 +73,9 @@ body>div{
 	color: #8f8f8f;
 	font-size: .13rem;
 }
+.head-btm{
+	overflow: hidden;
+}
 .head-btm li{
 	list-style: none;
 	padding: 0 .13rem;
@@ -97,11 +100,16 @@ body>div{
 }
 
 /*导航栏*/
-.banner .carousel{
+.banner .slider{
 	width: 100%;
 	margin-top: .18rem;
 	margin-bottom: .06rem;
+	height: .87rem;
 }
+.slider .mint-swipe-indicators{
+	bottom: -2px;
+}
+
 .banner .mip-anim{
 	width: 3.625rem;
     margin: 0 -.1rem .15rem;

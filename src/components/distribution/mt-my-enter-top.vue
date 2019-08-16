@@ -1,7 +1,9 @@
 <template>
 	<header class="mt-vip-top">
 		<div class="head">
-			<img src="/img/login/close.png" alt="">
+			<router-link to="/mtMyRedlist">
+				<img src="/img/login/close.png" alt="">
+			</router-link>
 			<span>帮助</span>
 		</div>
 	</header>

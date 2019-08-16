@@ -1,0 +1,90 @@
+
+/*header*/
+.headerBar{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.head-left,.head-right{
+	padding-left: 0.1rem;
+	height: 0.44rem;
+	line-height: 0.44rem;
+	text-align: center;
+}
+.head-center{
+	color: #333333;
+	font-size: 0.16rem;
+	line-height: 0.44rem;
+}
+/*bannerBar*/
+.bannerBar{
+	width: 100%;
+	position: relative;
+}
+.bannerBar img{
+	width: 100%;
+}
+.banner{
+	width: 100%;
+	position: absolute;
+	left: 0px;
+	bottom: -0.25rem;
+}
+.ban{
+	margin:0 0.16rem;
+	height: .5rem;
+	line-height: 0.5rem;
+	border-radius: 0.04rem;
+	display: flex;
+	padding:0 0.21rem;
+	background-color: #fff;
+	justify-content: space-between;
+	box-shadow:1px -4px 1px #f3f3f3 inset;
+}
+.ban span{
+	font-size: 0.15rem;
+	color: #232220;
+}
+.ban span:last-child{
+	font-size: 0.12rem;
+	color: #676767;
+}
+/*section*/
+section{
+	width: 100%;
+	overflow: hidden;
+	height: 2rem;
+	margin-top: 0.25rem;
+}
+.title{
+	margin-top: 0.13rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 0.96rem;
+}
+.title a{
+	width: 50%;
+	position: relative;
+}
+.title .tlt-one{
+	text-align: right;
+	padding-right: 0.2rem;
+	font-size: 0.17rem;
+	color: #424242;
+}
+.title .tlt-one i{
+	display: block;
+	margin-top: 2px;
+	width: 0.22rem;
+	height: 0.03rem;
+	background-color: #ffe8b2;
+	position: absolute;
+	right:0.45rem; 
+}
+.title .tlt-two{
+	text-align: left;
+	padding-left: 0.2rem;
+	font-size: 0.14rem;
+	color: #a2a19f;
+}

@@ -1,0 +1,127 @@
+
+/*header*/
+header{
+	width: 100%;
+  overflow: hidden;
+}
+.headerBar{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+.head-left,.head-right{
+	padding-left: 0.1rem;
+	height: 0.4rem;
+	line-height: 0.4rem;
+	text-align: center;
+}
+header .icon-fanhui1{
+	font-size: 0.16rem;
+	color: #676767;
+	display: block;
+}
+.head-center{
+	color: #f8af53;
+	font-size: 0.16rem;
+	line-height: 0.44rem;
+}
+.navBar{
+	margin-bottom: 0.04rem;
+	height: 0.24rem;
+	line-height: 0.24rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.navBar-item{
+	font-size: 0.12rem;
+	color: #252525;
+}
+.navBar-item .iconfont{
+	font-size: 0.14rem;
+}
+.search{
+	height: 0.35rem;
+	margin:0 0.11rem;
+	position: relative;
+}
+.search input{
+	width: 100%;
+	height: 100%;
+	display: block;
+	border:none;
+	padding-left: 0.31rem;
+	background-color: #ededed;
+	border-radius: 0.03rem;
+	font-size: 0.12rem;
+}
+.search input:focus{outline:none;}
+.search p{
+	width: 0.31rem;
+	height: 0.35rem;
+	text-align: center;
+	line-height: 0.35rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #393939;
+}
+.search p .icon-fangdajing{
+	font-size: 0.21rem;
+	display: block;
+	color: #393939;
+}
+
+/*section*/
+.section{
+	width: 100%;
+	height: 0.86rem;
+}
+.product{
+	width: 100%;
+	height: 0.86rem;
+	align-items: flex-end;
+	border-bottom: 1px dotted #f5f5f5;
+	font-size: 0.11rem;
+}
+.product .swiper-container{
+	width: 100%;
+	height: 100%;
+}
+#product .swiper-wrapper{
+	width: 100%;
+	height: 100%;
+	align-items: flex-end;
+}
+.product .swiper-slide{
+	width: 20%;
+	text-align: center;
+	float: left;
+	height: 100%;
+
+}
+.product .swiper-slide a{
+	color: #333;
+	display: block;
+	margin-top: 0.11rem;
+}
+.product .product-list a{
+	color: #fff0cf;
+}
+/*.product .product-item{
+	width: 0.55rem;
+	height: 0.55rem;
+	display: inline-block;
+}*/
+.product .product-list a img{
+	width: 0.55rem;
+	height: 0.55rem;
+  display: block;
+}
+.swiper-slide img{
+	width: 0.44rem;
+	height: 0.44rem;
+	border-radius: 50%;
+	margin: 0 auto;
+	display: block;
+}

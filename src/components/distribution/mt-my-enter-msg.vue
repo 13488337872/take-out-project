@@ -10,6 +10,9 @@
 			<input type="text">
 		</div>
 		<span class="section_box_span">未注册的手机号验证后自动创建美团账号</span>
+		<div class="section_message_box">
+			<input type="text" id="mssagein" placeholder="请输入验证码">
+		</div>
 		<button>获取短信验证码</button>
 	</div>
 	
@@ -44,8 +47,7 @@
 	margin: 0 auto;
 	height:.32rem;
 	width:2.97rem;
-	border-bottom: 1px solid #989898; 
-	padding-top: .29rem;
+	border-bottom: 1px solid #989898;
 }
 .section_box_inputg span{
 	color:#fdce5a;
@@ -95,4 +97,28 @@
 	font-size: .12rem;
 	float:left;
 }
+
+.section_message_box{
+	width:78.9%;
+	margin:.46rem auto;
+	display: -webkit-flex;
+	-webkit-justify-content:space-between;
+	height: .32rem;
+    width: 2.97rem;
+    border-bottom: 1px solid #989898;
+}
+
+#mssagein{
+ border:0;
+ width:100%;
+ height: .32rem;
+    border-bottom: 1px solid #989898;
+}
+#mssagein::-webkit-input-placeholder{
+	color:#fdce5a;
+	font-size:.16rem;
+	border:0;
+	background:0;
+}
+
 </style>
