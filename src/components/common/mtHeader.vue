@@ -17,5 +17,5 @@
 </script>
 
 <style scoped="scoped">
-  @import url("../../assets/iconfont.css");
+  @import url("../../assets/css/iconfont.css");
 </style>

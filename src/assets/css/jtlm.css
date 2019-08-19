@@ -24,7 +24,7 @@
 .bannerBar img{
 	width: 100%;
 }
-.banner{
+.jtmlbanner{
 	width: 100%;
 	position: absolute;
 	left: 0px;
@@ -50,7 +50,7 @@
 	color: #676767;
 }
 /*section*/
-section{
+.jtlmsection{
 	width: 100%;
 	overflow: hidden;
 	height: 2rem;

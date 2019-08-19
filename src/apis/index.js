@@ -1,12 +1,18 @@
 import Api from "../commons/Api"
 
-const baseUrl = "http://localhost:3000"
+
+//后端接口
+// const baseUrl = "http://10.36.175.15:8000"
+
+//模拟数据
+const UrlData = "http://localhost:3000"
+
 
 //获取主页的接口地址
-const CARTURL = `${baseUrl}/api/index`
+const CARTURL = `${UrlData}/api/index/`
 
 //详情页面接口地址
-const DETAIL = `${baseUrl}/api/detail`
+const DETAIL = `${UrlData}/api/detail`
 
 
 

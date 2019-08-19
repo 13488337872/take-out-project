@@ -1,7 +1,8 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 Vue.use(VueRouter)
-
+import axios from "axios"
+Vue.prototype.$ajax = axios
 //主页
 import index from "../views/mt-index"
 import mtindexcenter from "../components/distribution/mt-index-center"
@@ -32,10 +33,20 @@ import shoppingcart from '../views/shopping-cart'
 //到店自取
 import orderform from '../views/orderForm'
 
+//商铺详情
+import shopdetail from '../views/mt-shopdetail'
 
 //我的账号
 import mtmyid from "../views/mt-my-id"
 
+//减免配送费
+import jmpsf from '../views/jmpsf'
+
+//商铺详情
+import jtlm from '../views/jtlm'
+
+//我的账号
+import mtzs from "../views/mtzs"
 
 //密码登录页面
 import mtMyEnter from "../views/mt-my-enter"
@@ -52,6 +63,16 @@ import detail from "../views/detail";
 //菜单下午茶
 import mtIndexAfternoontea from "../views/mt-index-afternoontea"
 
+
+//banner1
+import mtbannereightvip from "../views/mt-banner-eightvip"
+
+
+//banner2
+import mtbannerseafood from "../views/mt-banner-seafood"
+
+//search
+import mtsearch from "../views/mt-search"
 
 //导入所有的mintui
 import MintUI from 'mint-ui'
@@ -124,10 +145,29 @@ let router = new VueRouter({
       path:"/detail",component:detail,
     },
     {
+      path:"/mtbannereightvip",component:mtbannereightvip,
+    },
+    {
+      path:"/jmpsf",component:jmpsf,
+    },
+    {
+      path:"/jtlm",component:jtlm,
+    },
+    {
+      path:"/mtzs",component:mtzs,
+    },
+    {
+      path:"/mtbannerseafood",component:mtbannerseafood,
+    },
+    {
       path:"/orderform",component:orderform,
     },
-    
-    
+    {
+      path:"/shopdetail",component:shopdetail,
+    },
+    {
+      path:"/mtsearch",component:mtsearch,
+    },
 		{
       path: '/mt-my-id',
       name: 'mt-my-id',

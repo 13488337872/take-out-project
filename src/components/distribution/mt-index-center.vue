@@ -56,6 +56,7 @@ export default {
 			if(item==0){
 				location.href= "http://localhost:8080/#/mtIndexAfternoontea"
 			}
+
 		}
 	},
 	

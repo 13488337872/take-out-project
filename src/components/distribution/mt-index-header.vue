@@ -5,10 +5,13 @@
         <span>立人科技<i class="icon iconfont arrow_right">&#xe604;</i></span>
         <img class="message" src="/img/01.png" alt="消息">
     </div>
-    <div class="inpt">
-      <input type="text" placeholder="米多面多 满25减15">
-      <i class="icon iconfont jiantou">&#xe65d;</i>
-    </div>
+    <router-link to="/mtsearch">
+      <div class="inpt">
+        <input type="text" placeholder="米多面多 满25减15">
+        <i class="icon iconfont jiantou">&#xe65d;</i>
+      </div>
+    </router-link>
+    
   </div>
 </template>
 <script>

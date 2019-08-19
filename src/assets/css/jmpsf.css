@@ -38,6 +38,7 @@ header .icon-fanhui1{
 	background-color: #ededed;
 	border-radius: 0.03rem;
 	font-size: 0.12rem;
+	box-sizing: border-box;
 }
 .search input:focus{outline:none;}
 .search p{

@@ -1,0 +1,211 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+ul li{
+	list-style: none;
+}
+html{
+	font-size: 26.27vw;
+}
+.KFC{
+	background-image:url(../img/KFC01.png);
+	background-size: 100% 1.275rem;
+	width: 100%;
+	background-repeat: no-repeat;
+}
+.KFC_top{
+	display: flex;
+	justify-content: space-between;
+	padding-top: .17rem;
+	color: white;
+}
+.KFC .icon-zuo{
+	padding-left: .18rem;
+	font-size: .22rem;
+}
+.KFC .KFC_top_r{
+	display: flex;
+	padding-right: .14rem;
+}
+.KFC .KFC_top_r span{
+	padding-left: .15rem;
+	font-size: .22rem;
+}
+/*  */
+.KFC .KFC_ZJS{
+	background: white;
+	/* height: 2.31rem; */
+	min-width: 3.55rem;
+	margin: 0 .1rem;
+	border-radius: .05rem;
+	margin-top: .34rem;
+	box-shadow: 0 0 .015rem red;
+}
+.KFC_ZJS .ZJS_Onetext{
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.ZJS_Onetext h3{
+	font-size: .2rem;
+	margin-top: .14rem;
+	margin-left: .125rem;
+}
+.ZJS_Onetext img{
+	width: .55rem;
+	height: .56rem;
+	position: absolute;
+	bottom: 0.04rem;
+	right: .1rem;
+	box-shadow: 0 0 .015rem red;
+}
+/*  */
+.ZJS_Twotext{
+	margin-top: .045rem;
+	color: #282828;
+	font-size: .115rem;
+}
+.ZJS_Twotext .icon-songhuozhunshi{
+	margin-left: .125rem;
+	color: #e4a82e;
+	vertical-align: middle;
+}
+.ZJS_Twotext .shu{
+	color: #d6d7d9;
+	margin-left: .04rem;
+}
+.ZJS_Twotext .icon-dui{
+	vertical-align: middle;
+	color: #c78c7a;
+}
+/*  */
+.ZJS_Threetext{
+	font-size: .125rem;
+}
+.ZJS_Threetext p{
+	margin-left: .085rem;
+	color: #b5b5b5;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.ZJS_Threetext .ZJS_Threetext_xia{
+	display: flex;
+	justify-content: space-between;
+	margin-top: .085rem;
+	margin-left: .125rem;
+	margin-right: .1rem;
+	padding-bottom: .13rem;
+}
+.ZJS_Threetext_xia_zuo{
+	display: flex;
+}
+.ZJS_Threetext .ZJS_Threetext_xia_zuo span{
+	height: .15rem;
+	width: auto;
+	border: 1px solid #ff94ad;
+	display: inline-block;
+	padding: 0.03rem 0.04rem;
+	color: #ed4964;
+	margin-right: .05rem;
+}
+.ZJS_Threetext_xia .icon-xiala{
+	padding-top: 0.03rem;
+}
+/*  */
+.KFC_Caidan .KFC_diancai_{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 .165rem;
+	padding-top: .085rem;
+	border-bottom: 1px solid #eeeeee;
+	line-height: .125rem;
+}
+.KFC_diancai_ .ul_header{
+	display: flex;
+	justify-content: space-around;
+	font-size: .165rem;
+}
+.ul_header li{
+	margin-right: .525rem;
+	font-size: .165rem;
+	color: #c3c3c3;
+	text-align: center;
+	height: .435rem;
+	line-height: .435rem;
+}
+.ul_header li:nth-child(1){
+	font-weight: 600;
+	color: #3e3e3e;
+	border-bottom: 2px solid #edd398;
+}
+.KFC_diancai_ .pingdan{
+	text-align: center;
+	height: .23rem;
+	width: .69rem;
+	line-height: .23rem;
+	border: 1px solid #c2a758;
+	color: #c2a758;
+	border-radius: .15rem;
+	margin-top: .09rem;
+	font-size: .115rem;
+}
+/*  */
+.KFC_diancai_two{
+	display: flex;
+	flex: 1;
+}
+.KFC_xinpin{
+	width: .8rem;
+	
+}
+.KFC_xinpin h6{
+	text-align: center;
+	height: .46rem;
+	line-height: .46rem;
+	font-size: .125rem;
+}
+.KFC_xinpin{
+	overflow-y:scroll;
+	height: 4.065rem;
+	width: 100%;
+    -webkit-flex: 1 1;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    position: relative;
+    overflow: scroll;
+}
+.KFC_xinpin .ul_body{
+	padding-left: .125rem;
+	background: #f8f8f8;
+	padding-top: .16rem;
+	border-top-right-radius: .15rem;
+	font-size: .125rem;
+}
+.KFC_xinpin .ul_body li{
+	padding-bottom: .36rem;
+	color: #6b6b6b;
+}
+/*  */
+.KFC_xinpin_{
+	flex: 1;
+	position: relative;
+}
+.KFC_xinpin_ span{
+	line-height: .435rem;
+	width: 100%;
+	display:inline-block;
+	/* padding-left: .2rem; */
+	position: absolute;
+	font-size: .15rem;
+}
+.KFC_xinpin_ ul li img{
+	height: 1.125rem;
+	width: 2.95rem;
+}
+.KFC_xinpin_ ul li .img_{
+	height: 1.125rem;
+	width: 2.95rem;
+	margin-top: .435rem;
+}

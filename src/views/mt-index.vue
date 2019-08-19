@@ -26,6 +26,7 @@ export default {
      */
     _initPageData() {
       index.getCartInfoByUserId(data => {
+        console.log(data)
         this.navdata = data;
       });
     }
