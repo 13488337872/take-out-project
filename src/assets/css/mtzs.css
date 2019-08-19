@@ -1,6 +1,6 @@
 
 /*header*/
-header{
+.mtheaderheader{
 	width: 100%;
   overflow: hidden;
 }
@@ -15,7 +15,7 @@ header{
 	line-height: 0.4rem;
 	text-align: center;
 }
-header .icon-fanhui1{
+.mtheaderheader .icon-fanhui1{
 	font-size: 0.16rem;
 	color: #676767;
 	display: block;

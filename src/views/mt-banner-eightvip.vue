@@ -1,9 +1,9 @@
 <template>
-	<div>	
+	<active class="mtbannereightvip">	
 		<mt-banner-eightvip-header></mt-banner-eightvip-header>
 		<mt-banner-eightvip-body></mt-banner-eightvip-body>
 		<mt-banner-eightvip-footer></mt-banner-eightvip-footer>
-	</div>
+	</active>
 </template>
 
 <script>

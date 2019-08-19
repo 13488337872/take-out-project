@@ -8,8 +8,6 @@ html{
 .mt-banner-eightvip-header{
 	display: flex;
 	justify-content: space-between;
-	margin-left: .25rem;
-	margin-right: .22rem;
 	height: .46rem;
 	line-height: .46rem;
 	color: #787878;

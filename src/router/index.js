@@ -74,6 +74,15 @@ import mtbannerseafood from "../views/mt-banner-seafood"
 //search
 import mtsearch from "../views/mt-search"
 
+//家常菜
+import mtindexcooking from "../views/mt-index-cooking";
+
+//汉堡披萨
+import mtindexhamburger from "../views/mt-index-hamburger";
+
+//小吃馆
+import mtindexsnack from "../views/mt-index-snack";
+
 //导入所有的mintui
 import MintUI from 'mint-ui'
 
@@ -194,6 +203,21 @@ let router = new VueRouter({
       path: '/mtIndexAfternoontea',
       name: 'mt-index-afternoontea',
       component: mtIndexAfternoontea
+
+    },
+    {
+      path: '/mtindexcooking',
+      component: mtindexcooking
+
+    },
+    {
+      path: '/mtindexhamburger',
+      component: mtindexhamburger
+
+    },
+    {
+      path: '/mtindexsnack',
+      component: mtindexsnack
 
     }
   ]

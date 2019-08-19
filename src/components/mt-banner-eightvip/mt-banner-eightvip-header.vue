@@ -1,15 +1,20 @@
 <template>
-	
 	<div class="mt-banner-eightvip-header">
 		<div class="bannertwo_imgone">
-			<span class="iconfont icon-zuo"></span>
+			<span class="iconfont icon-zuo" @click="mtbannereightvipback()">&#xe600;</span>
 			<span class="iconfont icon-fenxiang"></span>
 		</div>
 	</div>
-	
 </template>
 
 <script>
+export default{
+	methods: {
+		mtbannereightvipback(){
+			history.back();
+		}
+	},
+}
 </script>
 
 <style scoped>
@@ -33,7 +38,7 @@
 		font-size: .17rem;
 		color: white;
 	}
-	.bannertwo_imgone_one{
+	.mt-banner-eightvip-header{
 		background-image:url(/img/11.png);
 		background-size: 100% 100%;
 		width: auto;

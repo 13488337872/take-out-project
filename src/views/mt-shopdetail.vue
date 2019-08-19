@@ -63,37 +63,18 @@
 				</div>
 				<div class="KFC_xinpin_">
 					<span>新品上市</span>
-					<ul>
-						<li><img  class="img_" src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-					</ul>
-					<span>新品上市</span>
-					<ul>
-						<li><img  class="img_" src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-					</ul>
-					<span>新品上市</span>
-					<ul>
-						<li><img  class="img_" src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-					</ul>
-					<span>新品上市</span>
-					<ul>
-						<li><img  class="img_" src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-						<li><img src="img/KFC04.png"></li>
-					</ul>
+					<div class="img_one">
+						<img  class="img_" src="/img/KFC05.png">
+						<div class="img_two">
+							<h2>比利时风味华夫巧克力味T</h2>
+							<p class="img_two_text">主要原料:面粉，糖</p>
+							<p class="img_two_text">月售&nbsp;&nbsp;赞0</p>
+							<div class="red_elv">
+								<p class="elv">￥11</p>
+								<p class="iconfont icon-add-fill"></p>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -109,7 +90,7 @@ export default {
     methods: {
 		handleScroll () {
 			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
-			console.log(scrollTop);
+			// console.log(scrollTop);
 			if(scrollTop>=200){
 				$(".KFC_Caidan").css({
 
@@ -125,17 +106,7 @@ export default {
 	
 <style scoped>
 @import url(../assets/css/mt-shopdetail.css);
-.KFC_Caidan{
-	display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-    height: 100%;
-}
+
+
 </style>    
    

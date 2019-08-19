@@ -1,29 +1,37 @@
 <template>
-    <!-- banner轮播图 -->
-    <div class="banner">
-        <div class="slider">
-            <mt-swipe :auto="3000">
-                <mt-swipe-item>
-                    <img src="/img/banner1.png">
-                </mt-swipe-item>
-                <mt-swipe-item>
-                    <img src="/img/banner1.png">
-                </mt-swipe-item>
-            </mt-swipe>
-        </div>
-        <div class="banner-anim">
-            <img class="mip-anim" src="/img/9.gif" alt="">
-        </div>
+  <!-- banner轮播图 -->
+  <div class="banner">
+    <div class="slider">
+      <mt-swipe :auto="3000">
+        <mt-swipe-item v-for="(item,bannerId) in data" :key="bannerId" @click="bannerskip(bannerId)">
+          <img :src=item />
+        </mt-swipe-item>
+      </mt-swipe>
     </div>
+    <div class="banner-anim">
+      <img class="mip-anim" src="/img/9.gif" alt />
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    data () {
-    return {
-    }
-}
-}
+  data() {
+    return {};
+  },
+  props: ["data"],
+  methods: {
+		bannerskip:function(bannerId){
+      console.log(bannerId)
+			if(bannerId==0){
+				location.href= "http://localhost:8080/#/mtbannerseafood"
+      }
+      if(bannerId==1){
+				location.href= "http://localhost:8080/#/mtbannereightvip"
+			}
+		}
+	}
+};
 </script>
 
 <style scoped>

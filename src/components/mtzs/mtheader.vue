@@ -1,9 +1,9 @@
 <template>
-  <header>
+  <div class="mtheaderheader">
   	<mt-index-header></mt-index-header>
     <mt-mtzs-nava></mt-mtzs-nava>
   	<mt-index-search></mt-index-search>
-  </header>
+  </div>
 </template>
 
 <script>

@@ -6,7 +6,7 @@
     </div>
 </template>
 <script>
-import mtIndexSnackSd from '../components/menu/mt-index-cooking-chd';
+import mtIndexSnackSd from '../components/menu/mt-index-snack-sd';
 import mtIndexSnackSpizza from '../components/menu/mt-index-snack-spizza';
 import mtIndexSnackSpizzaSolist from '../components/menu/mt-index-snack-spizza-solist';
 

@@ -53,10 +53,31 @@ export default {
 	},
 	methods: {
 		skip:function(item){
+			console.log(item)
 			if(item==0){
 				location.href= "http://localhost:8080/#/mtIndexAfternoontea"
 			}
-
+			if(item==1){
+				location.href= "http://localhost:8080/#/mtindexhamburger"
+			}
+			if(item==2){
+				location.href= "http://localhost:8080/#/mtindexcooking"
+			}
+			if(item==3){
+				location.href= "http://localhost:8080/#/mtindexsnack"
+			}
+			if(item==4){
+				location.href= "http://localhost:8080/#/jmpsf"
+			}
+			if(item==5){
+				location.href= "http://localhost:8080/#/jtlm"
+			}
+			if(item==6){
+				location.href= "http://localhost:8080/#/mtzs"
+			}
+			if(item==7){
+				location.href= "http://localhost:8080/#/orderform"
+			}
 		}
 	},
 	
