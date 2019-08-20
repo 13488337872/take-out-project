@@ -1,6 +1,6 @@
 <template>
-    <div class="title">
-      <span class="icon iconfont icon-shangyiye"></span>
+    <div class="mtordertitle">
+      <span class="icon iconfont icon-shangyiye" @click="mtOrderBack()">&#xe600;</span>
       <em>提交订单</em>
     </div>
 </template>
@@ -12,10 +12,17 @@ export default {
     return {
 
     }
-  }
+  },
+  methods: {
+    mtOrderBack(){
+      history.back()
+    }
+  },
 }
 </script>
 
 <style>
-
+.mtordertitle em{
+  margin: 0 auto;
+}
 </style>

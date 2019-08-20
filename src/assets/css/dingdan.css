@@ -6,7 +6,7 @@
 }
 
 /* tijiao */
-.title{
+.mtordertitle{
     display: flex;
     align-items: center;
     font-size: .16rem;
@@ -16,6 +16,7 @@
     box-sizing: border-box;
     padding: 0 .12rem;
     font-weight: 900;
+
 }
 .title .icon-shangyiye{
     margin-right: 1.29rem;

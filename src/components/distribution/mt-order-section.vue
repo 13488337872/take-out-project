@@ -1,5 +1,5 @@
 <template>
-  <section class="mt-order-section">
+  <div class="mt-order-section">
     <div class="taking_section_store" v-for="(item,key) in data" :key="key">
       <div class="taking_store_top">
         <img :src="item.orderimg" alt />
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="all-search">
-        <div class="icon iconfont icon-shangyiye"></div>
+        <div class="icon iconfont icon-shangyiye" @click="allsearchback()">&#xe600;</div>
         <input class="sear" type="text" placeholder="鲍鱼饭">
         <div class="icon iconfont icon-fangdajing"></div>
     </div>
@@ -13,7 +13,12 @@ export default {
     return {
 
     }
-  }
+  },
+  methods: {
+    allsearchback(){
+      history.back()
+    }
+  },
 }
 </script>
 

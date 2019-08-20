@@ -12,8 +12,10 @@
 		<span class="section_box_span">未注册的手机号验证后自动创建美团账号</span>
 		<div class="section_message_box">
 			<input type="text" id="mssagein" placeholder="请输入验证码">
+			<span>获取验证码</span>
 		</div>
-		<button>获取短信验证码</button>
+		<span id="mt_message">请输入正确的验证码</span>
+		<button>登录</button>
 	</div>
 	
 	<!-- 登录方式 -->
@@ -25,6 +27,11 @@
 </template>
 
 <script>
+export default {
+	methods: {
+		
+	},
+}
 </script>
 
 <style>
@@ -71,7 +78,6 @@
 	color:#979797;
 	float:left;
 	margin:.06rem 0 0 .4rem;
-	
 }
 .mt-my-passg button{
 	height:.45rem;
@@ -85,6 +91,15 @@
 	margin-bottom:.32rem;
 	font-size:.18rem;
 } 
+#mt_message{
+	font-size:.1rem;
+	color:red;
+	float:left;
+	margin-left:.38rem;
+	float:left;
+	
+}
+
 /* 登录方式 */
 .section_typeg{
 	width:2.97rem;
@@ -100,14 +115,19 @@
 
 .section_message_box{
 	width:78.9%;
-	margin:.46rem auto;
+	margin:.46rem auto 0.1rem;
 	display: -webkit-flex;
 	-webkit-justify-content:space-between;
 	height: .32rem;
     width: 2.97rem;
-    border-bottom: 1px solid #989898;
+	border-bottom: 1px solid #989898;
+	position: relative;
 }
-
+.section_message_box span{
+	position: absolute;
+	right: 0;
+	line-height: .33rem;;
+}
 #mssagein{
  border:0;
  width:100%;

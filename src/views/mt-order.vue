@@ -2,23 +2,40 @@
   <div class="mt-order">
     <mt-order-top></mt-order-top>
     <mt-order-check></mt-order-check>
-    <router-view></router-view>
+    <router-view :data="mtorder.order"></router-view>
   </div>
 </template>
 
 <script>
 import mtordertop from "../components/distribution/mt-order-top";
 import mtordercheck from "../components/distribution/mt-order-check";
+import index from '../apis/index.js'
 export default {
   name: "login",
   data: function() {
-    return {};
+    return {
+      mtorder:{}
+
+    };
   },
   components: {
     "mt-order-top": mtordertop,
     "mt-order-check": mtordercheck
   },
-  methods: {}
+  created() {
+    this._getMtOrder()
+  },
+  methods: {
+    _getMtOrder(){
+      index.getOrderInfoByOrderId(data=>{
+        console.log(data);
+        this.mtorder = data
+      });
+      
+    }
+  }
+	
+
 };
 </script>
 

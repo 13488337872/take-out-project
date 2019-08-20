@@ -22,31 +22,31 @@ export default {
     "mt-my-enter-art": mtMyEnterArt
   },
   methods: {
-    showMsgFrompassd:function(userid,userpwd){
-      // 组件中使用post方法
-      this.axios.post(url, {a: 1, b: 2})
-      .then(res => {
-        // 成功回调
-        if(res==1){
-          MessageBox.confirm('',{
-            message:'登陆成功',
-            confirmButtonText:'确定',
-            cancelButtonText:'取消'
-          }).then(action=>{
-            if(action=='confirm'){
-              location.href="http://localhost:8080/#/"
-            }
-          }).catch(error=>{
-            if(error=='cancel'){
+    // showMsgFrompassd:function(userid,userpwd){
+    //   // 组件中使用post方法
+    //   this.axios.post('', {})
+    //   .then(res => {
+    //     // 成功回调
+    //     if(res==1){
+    //       MessageBox.confirm('',{
+    //         message:'登陆成功',
+    //         confirmButtonText:'确定',
+    //         cancelButtonText:'取消'
+    //       }).then(action=>{
+    //         if(action=='confirm'){
+    //           location.href="http://localhost:8080/#/"
+    //         }
+    //       }).catch(error=>{
+    //         if(error=='cancel'){
               
-            }
-          });
-        }
-      }, res => {
-        // 错误回调
+    //         }
+    //       });
+    //     }
+    //   }, res => {
+    //     // 错误回调
 
-      })
-    }
+    //   })
+    // }
   }
 };
 </script>

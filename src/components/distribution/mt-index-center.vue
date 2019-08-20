@@ -31,6 +31,7 @@
 </template>
 
 
+
 <script>
 import indexHeader from "./mt-index-header";
 import indexSupper from "./mt-index-supper";
@@ -58,7 +59,9 @@ export default {
   },
   methods: {
 	shopcart(){
-		location.href="http://localhost:8080/#/shoppingcart"
+    this.$router.push({
+          path:'./shoppingcart'
+    })
 	},
     skip: function(item) {
       console.log(item);
@@ -85,6 +88,9 @@ export default {
       }
       if (item == 7) {
         location.href = "http://localhost:8080/#/orderform/"+item;
+      }
+      if (item == 9) {
+        location.href = "http://localhost:8080/#/allClassifications/"+item;
       }
     }
    }

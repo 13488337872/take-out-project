@@ -20,6 +20,8 @@ const SHOPCART = `${UrlData}/api/shopCar`
 //获取订单接口地址
 const ordUrl = `${UrlData}/api/order`;
 
+//获取cartinfo的接口地址
+const CARTINFO = `${UrlData}/api/mtorders`;
 
 
 export default {
@@ -38,6 +40,9 @@ export default {
   },
   getOrder(cb){
     Api.getter(ordUrl,cb)
-}
+  },
+  getOrderInfoByOrderId(cb){
+    Api.get(CARTINFO,cb)
+	}
 }
 
