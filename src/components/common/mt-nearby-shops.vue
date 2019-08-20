@@ -9,7 +9,7 @@
             </p>
 		</div>
         <div class="nearbyShopsList">
-            <li v-for="(item,nid) in data" :key="nid" @click="mtShopdetail()">
+            <li v-for="(item,nid) in data" :key="nid" @click="mtShopdetail(nid)">
                 <img :src=item.nearbyShopPic alt="">
                 <div class="shopsDetails">
                     <div class="detailsTop">
@@ -52,7 +52,7 @@
 export default {
     props:["data"],
     methods: {
-        mtShopdetail(){
+        mtShopdetail(nid){
             //href:设置或者获取地址栏信息路径
             //search：获取地址栏参数 例：(?name=zj&age=18)
             //host:返回主机（域名）
@@ -60,6 +60,7 @@ export default {
             //pathname:返回路径
             //hash：返回片段 #后面的内容，常见链接 锚点
             location.href = "http://localhost:8080/#/shopdetail"
+            console.log(nid)
         }
     },
 }

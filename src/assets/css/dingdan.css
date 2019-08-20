@@ -1,0 +1,293 @@
+
+.mar-bottom{
+    margin-bottom: .05rem;
+    background-color: #fff;
+    border-radius: .1rem;
+}
+
+/* tijiao */
+.title{
+    display: flex;
+    align-items: center;
+    font-size: .16rem;
+    height: .44rem;
+    width: 100%;
+    background-color: #ffd266;
+    box-sizing: border-box;
+    padding: 0 .12rem;
+    font-weight: 900;
+}
+.title .icon-shangyiye{
+    margin-right: 1.29rem;
+}
+/* main */
+.main{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 .12rem 0;
+    background-color: #f4f4f4;
+
+    flex:1;
+    overflow-y:  scroll;
+    position: relative;
+}
+.waimai-daodian{
+    border-radius: .1rem;
+}
+.waimai-daodian .wm-dd{
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 .13rem;
+}
+.waimai-daodian .wm-dd div{
+    width: 1.6rem;
+    height: .34rem;
+    text-align: center;
+    line-height: .34rem;
+    font-size: .15rem;
+    font-weight: 900;
+    border: 1px solid #eee;
+}
+.waimai-daodian .wm-dd div:last-child{
+    background-color: #fef6e3;
+}
+.waimai-daodian .dizhi{
+    display: flex;
+    box-sizing: border-box;
+    padding: .17rem .13rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: .13rem;
+    color: #999;
+}
+.waimai-daodian .lijisc{
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: .17rem .13rem;
+    font-size: .13rem;
+}
+.waimai-daodian .lijisc div:first-child{
+    font-weight: bold;
+}
+.waimai-daodian .lijisc div:last-child{
+    color: #348bed;
+}
+.waimai-daodian .lijisc div:last-child .icon-xiayiyehouyiye{
+    color: #bfbfbf;
+}
+
+/* dingdan */
+/* top */
+.dingdan{
+    border-radius: .1rem;
+
+    box-sizing: border-box;
+    width: 100%;
+    padding: .2rem .12rem;
+}
+.dingdan .dingdan-top{
+    width: 100%;
+    height: .33rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: .12rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+.dingdan .dingdan-top div{
+    box-sizing: border-box;
+    padding: .02rem .05rem;
+    color: #333;
+    border: 1px solid #333;
+}
+/* meal */
+.dingdan .dingdan-meal{
+    display: flex;
+    justify-content: space-between;
+    margin-top: .19rem;
+}
+.dingdan .dingdan-meal img{
+    width: .5rem;
+    height: .5rem;    
+}
+.dingdan .dingdan-meal .dingdan-meal-ri{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dingdan .dingdan-meal-tit{
+    width: 2.68rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: .13rem;
+    font-weight: 900;
+}
+.dingdan .dingdan-meal-tit+div{
+    font-size: .06rem;
+    color: #999;
+}
+/* bao-pei */
+.bao-pei{
+    width: 100%;
+    box-sizing: border-box;
+    padding: .2rem 0;
+    font-size: .14rem;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: .19rem;
+}
+.bao-pei>div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .2rem;
+}
+
+/* youhui */
+.youhui div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .12rem;
+}
+.youhui .youhui-box img{
+    width: .15rem;
+    height: .15rem;
+}
+.youhui .youhui-box div{
+    width: .78rem;
+}
+.youhui .youhui-box{
+    margin-bottom: .14rem;
+}
+.youhui .youhui-box-jin{
+    margin-top: .12rem;
+}
+/* xiaoji */
+.xiaoji{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #eee;
+    box-sizing: border-box;
+    padding-top: .12rem;
+}
+.xiaoji .guize{
+    font-size: .11rem;
+    color: #9b9b9b;
+}
+.xiaoji .guize .icon-wenhao{
+    font-size: .11rem;
+    color: #9b9b9b;
+}
+.xiaoji .yhui-xji{
+    /* width: 1.53rem; */
+    font-size: .13rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+.xiaoji .yhui-xji .total{
+    font-size: .17rem;
+}
+
+/* telbaohu */
+.telbaohu{
+    box-sizing: border-box;
+    padding: .19rem .12rem;
+    font-size: .12rem;
+}
+.telbaohu .phone{
+    display: inline-block;
+    width: .15rem;
+    height: .15rem;
+}
+.telbaohu .kaiguan{
+    width: .41rem;
+    height: .25rem;
+}
+.telbaohu .telbaohu-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.telbaohu-top-le{
+    width: .96rem;
+    display: flex;
+    align-items: center;
+}
+.telbaohu div:last-child{
+    color: #999;
+}
+.telbaohu .telbaohu-top .icon-wenhao{
+    font-size: .11rem;
+    color: #9b9b9b;
+}
+
+.other{
+    box-sizing: border-box;
+    padding: .14rem .12rem;
+    font-size: .13rem;
+}
+.other .other-li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.other .other-li .fapiao{
+    color: #ccc;
+}
+/* findpeople */
+.findpeople{
+    box-sizing: border-box;
+    padding: .14rem .12rem;
+    font-size: .13rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.findpeople .fp-p{
+    color: #999794;
+}
+.findpeople .fp-p .icon-xuanze{
+    color: #ddd;
+}
+
+.send-meal{
+    display: flex;
+    position:fixed;
+    left: .11rem;
+    bottom: .08rem;
+    font-size:.12rem;
+    font-weight: 900;
+}
+.send-meal .send-meal-le{
+    width: 2.38rem;
+    height: .5rem;
+    color: #fff;
+    background-color: #333;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem; 
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    padding: .17rem .2rem;
+}
+.send-meal .send-meal-le div{
+    width: .71rem;
+}
+.send-meal .send-meal-ri{
+    width: 1.13rem;
+    height: .5rem;
+    background-color: #fcce5f;
+    border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+    text-align: center;
+    line-height: .5rem; 
+}

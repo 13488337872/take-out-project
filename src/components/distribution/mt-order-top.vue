@@ -31,7 +31,6 @@
 	height:.18rem;
 	position:absolute;
 	top:.15rem;
-	right:.56rem;
 }
 #msg{
 	width:.16rem;

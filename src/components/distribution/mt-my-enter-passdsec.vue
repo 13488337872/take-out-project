@@ -6,15 +6,14 @@
 		<div class="section_box_input">
 			<span>+86</span>
 			<span id="section_arrow">></span>
-			<input type="text">
+			<input type="text" v-model="userid" :key="userid">
 		</div>
 		<div class="section_box_input">
-			<input type="password" placeholder="请输入密码" id="pd_input">
+			<input v-model="userpwd" :key="userpwd" type="password" placeholder="请输入密码" id="pd_input">
 			<img src="/img/login/eyes.png" alt="">
 		</div>
-		<button>登录</button>
+		<button @click="sendlogin(userid,userpwd)">登录</button>
 	</div>
-	
 	<!-- 登录方式 -->
 	<div class="section_type">
 		<router-link to="/mt-my-enterm"><span>验证码登录</span></router-link>
@@ -24,6 +23,19 @@
 </template>
 
 <script>
+export default {
+	name:"mtmyenterpassd",
+	data() {
+		return {
+			
+		}
+	},
+	methods: {
+		sendlogin:function(userid,userpwd){
+			this.$emit("listenTologin",userid,userpwd)
+		}
+	},
+}
 </script>
 
 <style>

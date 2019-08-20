@@ -3,8 +3,10 @@
   <div class="banner">
     <div class="slider">
       <mt-swipe :auto="3000">
-        <mt-swipe-item v-for="(item,bannerId) in data" :key="bannerId" @click="bannerskip(bannerId)">
-          <img :src=item />
+        <mt-swipe-item v-for="(item,bannerId) in data" :key="bannerId">
+          <div @click="bannerskip(bannerId)">
+            <img :src=item />
+          </div>
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -21,8 +23,7 @@ export default {
   },
   props: ["data"],
   methods: {
-		bannerskip:function(bannerId){
-      console.log(bannerId)
+		bannerskip(bannerId){
 			if(bannerId==0){
 				location.href= "http://localhost:8080/#/mtbannerseafood"
       }

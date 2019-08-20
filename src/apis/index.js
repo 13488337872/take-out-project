@@ -14,9 +14,11 @@ const CARTURL = `${UrlData}/api/index/`
 //详情页面接口地址
 const DETAIL = `${UrlData}/api/detail`
 
+//购物车
+const SHOPCART = `${UrlData}/api/shopCar`
 
-
-
+//获取订单接口地址
+const ordUrl = `${UrlData}/api/order`;
 
 
 
@@ -30,6 +32,12 @@ export default {
   },
   getMtDetail(cb){
     Api.get(DETAIL,cb)
-  }
+  },
+  getMtShopCar(cb){
+    Api.get(SHOPCART,cb)
+  },
+  getOrder(cb){
+    Api.getter(ordUrl,cb)
+}
 }
 

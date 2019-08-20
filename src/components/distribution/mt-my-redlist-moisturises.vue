@@ -6,8 +6,10 @@
             </div>
             <div class="me">
                 <div class="address">
-                    <img src="/img/address.jpg" alt="">
-                    <p>我的地址</p>
+                    <router-link to="/add">
+                        <img src="/img/address.jpg" alt="">
+                        <p>我的地址</p>
+                    </router-link>
                 </div>
                 <div class="address">
                     <img src="/img/footprint.jpg" alt="">
