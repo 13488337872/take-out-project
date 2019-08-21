@@ -23,6 +23,8 @@ const ordUrl = `${UrlData}/api/order`;
 //获取cartinfo的接口地址
 const CARTINFO = `${UrlData}/api/mtorders`;
 
+//获取附近商铺列表接口地址
+const NEARBYSHOPLIST = `${UrlData}/api/mtShopList`;
 
 export default {
   /**
@@ -32,17 +34,25 @@ export default {
   getCartInfoByUserId(cb){
     Api.get(CARTURL,cb)
   },
+
   getMtDetail(cb){
     Api.get(DETAIL,cb)
   },
+
   getMtShopCar(cb){
     Api.get(SHOPCART,cb)
   },
+
   getOrder(cb){
     Api.getter(ordUrl,cb)
   },
+
   getOrderInfoByOrderId(cb){
     Api.get(CARTINFO,cb)
+  },
+  
+  getNearbyShopList(cb){
+    Api.get(NEARBYSHOPLIST,cb)
 	}
 }
 

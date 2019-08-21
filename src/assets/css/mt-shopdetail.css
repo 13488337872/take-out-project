@@ -10,9 +10,10 @@ html{
 }
 .KFC{
 	background-image:url(../img/KFC01.png);
-	background-size: 100% 100%;
+	background-size: 100% 1.275rem;
 	width: 100%;
-	height: 1.275rem;
+	height: inherit;
+	background-repeat: no-repeat;
 }
 .KFC_top{
 	display: flex;
@@ -115,7 +116,7 @@ html{
 }
 /*  */
 .KFC_Caidan{
-	
+	height: inherit;
 }
 .KFC_Caidan .KFC_diancai_{
 	display: flex;
@@ -155,12 +156,18 @@ html{
 	font-size: .115rem;
 }
 /*  */
+.KFC_xinpin_List{
+	height: inherit;
+	overflow-y: auto;
+}
 .KFC_diancai_two{
 	display: flex;
+	height: inherit;
 }
 .KFC_xinpin{
 	width: .8rem;
-	font-size: ;
+	height: inherit;
+	overflow-y: auto;
 }
 .KFC_xinpin h6{
 	text-align: center;
@@ -168,21 +175,15 @@ html{
 	line-height: .46rem;
 	font-size: .125rem;
 }
-.KFC_xinpin{
-	overflow-y:scrll;
-	height: 4.065rem;
-/* 	position: fixed; */
-}
 .KFC_xinpin .ul_body{
-	padding-left: .125rem;
 	background: #f8f8f8;
-	padding-top: .16rem;
 	border-top-right-radius: .15rem;
 	font-size: .125rem;
 }
 .KFC_xinpin .ul_body li{
-	padding-bottom: .36rem;
 	color: #6b6b6b;
+	line-height: 0.52rem;
+    text-align: center;
 }
 /*  */
 .KFC_xinpin_{
@@ -194,15 +195,16 @@ html{
 	width: 100%;
 	display:inline-block;
 	/* padding-left: .2rem; */
-	position: absolute;
 	font-size: .15rem;
+	position: sticky;
+	top: .0rem;
+	background: white;
 }
 .KFC_xinpin_ .img_one{
 	display: flex;
 	padding-top: .44rem;
 }
 .KFC_xinpin_ .img_one .img_{
-	height: 1.445rem;
 	width: 1.08rem;
 }
 .KFC_xinpin_ .img_two{
@@ -210,6 +212,10 @@ html{
 }
 .KFC_xinpin_ .img_one h2{
 	font-size: .18rem;
+	width: 1.63rem;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .KFC_xinpin_ .img_one .img_two_text{
 	font-size: .115rem;

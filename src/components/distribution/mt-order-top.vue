@@ -30,6 +30,7 @@
 	width:.18rem;
 	height:.18rem;
 	position:absolute;
+	right: .5rem;
 	top:.15rem;
 }
 #msg{

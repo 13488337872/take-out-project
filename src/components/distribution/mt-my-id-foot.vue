@@ -17,7 +17,9 @@
 					cancelButtonText:'取消'
 				}).then(action=>{
 					if(action=='confirm'){
-						location.href="http://localhost:8080/#/mtMyRedlist"
+						this.$router.push({
+							path:'/mtMyRedlist'
+						})
 					}
 				}).catch(error=>{
 					if(error=='cancel'){

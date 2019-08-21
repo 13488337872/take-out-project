@@ -25,7 +25,8 @@ html{
 }
 .Search_header .input_search{
 	width: 2.635rem;
-	height: .15rem;
+	height: .34rem;
+	line-height: .34rem;
 	border: 0;
 	background: #f1f1f1;
 	margin: auto 0;

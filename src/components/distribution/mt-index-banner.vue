@@ -25,10 +25,20 @@ export default {
   methods: {
 		bannerskip(bannerId){
 			if(bannerId==0){
-				location.href= "http://localhost:8080/#/mtbannerseafood"
+        this.$router.push({
+          path:'/mtbannerseafood',
+          query:{
+          bannerId:bannerId
+          }
+        })
       }
       if(bannerId==1){
-				location.href= "http://localhost:8080/#/mtbannereightvip"
+        this.$router.push({
+          path:'/mtbannereightvip',
+          query:{
+          bannerId:bannerId
+          }
+        })
 			}
 		}
 	}

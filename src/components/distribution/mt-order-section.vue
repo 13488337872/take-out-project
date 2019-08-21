@@ -40,6 +40,8 @@ export default {
   width: 100%;
   /* display:none; */
   background: #f0f0f0;
+  overflow: auto;
+  flex: 1;
 }
 .taking_section_store {
   width: 3.51rem;

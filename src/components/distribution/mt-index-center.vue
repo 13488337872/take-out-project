@@ -66,31 +66,76 @@ export default {
     skip: function(item) {
       console.log(item);
       if (item == 0) {
-        location.href = "http://localhost:8080/#/mtIndexAfternoontea/"+item;
+        this.$router.push({
+          path:'/mtIndexAfternoontea',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 1) {
-        location.href = "http://localhost:8080/#/mtindexhamburger/"+item;
+        this.$router.push({
+          path:'/mtindexhamburger',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 2) {
-        location.href = "http://localhost:8080/#/mtindexcooking/"+item;
+        this.$router.push({
+          path:'/mtindexcooking',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 3) {
-        location.href = "http://localhost:8080/#/mtindexsnack/"+item;
+        this.$router.push({
+          path:'/mtindexsnack',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 4) {
-        location.href = "http://localhost:8080/#/jmpsf/"+item;
+        this.$router.push({
+          path:'/jmpsf',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 5) {
-        location.href = "http://localhost:8080/#/jtlm/"+item;
+        this.$router.push({
+          path:'/jtlm',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 6) {
-        location.href = "http://localhost:8080/#/mtzs/"+item;
+        this.$router.push({
+          path:'/mtzs',
+          query:{
+          menuId:item
+          }
+        })
       }
       if (item == 7) {
-        location.href = "http://localhost:8080/#/orderform/"+item;
+        this.$router.push({
+          path:'/orderform',
+          query:{
+            menuId:item
+          }
+        })
       }
       if (item == 9) {
-        location.href = "http://localhost:8080/#/allClassifications/"+item;
+        this.$router.push({
+          path:'/allClassifications',
+          query:{
+            menuId:item
+          }
+        })
       }
     }
    }

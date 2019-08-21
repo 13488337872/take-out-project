@@ -2,9 +2,9 @@
     <div>
          <div class="he">
             <div class="deng" @click="mtlogin()">
-                <router-link to="/login">
+                <router-link to="/mt-my-enterm">
                     <img src="/img/logo.jpg" alt="">
-                    <h4>登录/注册</h4>
+                    <h4 class="loginName">登录/注册</h4>
                 </router-link>
             </div>
             
@@ -45,8 +45,26 @@ export default {
             // 错误回调
 
           })
-        }
+        },
+        /**
+       * 获取localStorage数据
+       * @param {*} key localStorage中的key string
+       * @returns localStorage数据 arr
+       */
+      getDate(key) {
+        var str = localStorage.getItem(userId) || "[]";
+        var arr = JSON.parse(str);
+        return arr;
+        conosle.log(arr)
+        // let ls = sessionStorage;
+      	// $("#username").html(ls.mobile);
+      }
     },
+    mounted(){
+      if(!localStorage.getItem("userId")){
+        this.getDate()
+      }
+    }
 }
 </script>
 <style scoped>

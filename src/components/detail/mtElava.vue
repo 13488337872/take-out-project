@@ -3,7 +3,7 @@
     <div class="evaluate-com">
       <div class="evaluate-tlt">
         <h2>外卖评价</h2>
-        <a href="#">46条评价<i class="iconfont icon-qianjin"></i></a>
+        <a href="javascript:;">46条评价<i class="iconfont icon-qianjin"></i></a>
       </div>
       <div class="pgBar">
         <div class="pgBar-bar">

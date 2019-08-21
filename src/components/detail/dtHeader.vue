@@ -4,8 +4,8 @@
       <img :src="data.banImg"/>
     </div>
     <div class="head-icon">
-     <div class="head-icon-left">
-          <a href="#">
+     <div class="head-icon-left" @click="mtDtHeaderBack()">
+          <a href="javascript:;">
             <i class="iconfont icon-xiajiantou"></i>
           </a>
      </div>
@@ -52,7 +52,9 @@
         if(_top > 41){
            $(". head-icon-center").css.display = "block";
         }
-      }
+      },
+      mtDtHeaderBack(){
+        history.back()      }
     }
   }
 </script>

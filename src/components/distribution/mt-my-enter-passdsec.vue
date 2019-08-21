@@ -6,10 +6,10 @@
 		<div class="section_box_input">
 			<span>+86</span>
 			<span id="section_arrow">></span>
-			<input type="text" v-model="userid" :key="userid">
+			<input type="text" v-model="userid">
 		</div>
 		<div class="section_box_input">
-			<input v-model="userpwd" :key="userpwd" type="password" placeholder="请输入密码" id="pd_input">
+			<input v-model="userpwd" type="password" placeholder="请输入密码" id="pd_input">
 			<img src="/img/login/eyes.png" alt="">
 		</div>
 		<button @click="sendlogin(userid,userpwd)">登录</button>

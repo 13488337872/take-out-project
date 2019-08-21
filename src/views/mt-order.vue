@@ -9,13 +9,12 @@
 <script>
 import mtordertop from "../components/distribution/mt-order-top";
 import mtordercheck from "../components/distribution/mt-order-check";
-import index from '../apis/index.js'
+import index from "../apis/index.js";
 export default {
   name: "login",
   data: function() {
     return {
-      mtorder:{}
-
+      mtorder: {}
     };
   },
   components: {
@@ -23,19 +22,15 @@ export default {
     "mt-order-check": mtordercheck
   },
   created() {
-    this._getMtOrder()
+    this._getMtOrder();
   },
   methods: {
-    _getMtOrder(){
-      index.getOrderInfoByOrderId(data=>{
-        console.log(data);
-        this.mtorder = data
+    _getMtOrder() {
+      index.getOrderInfoByOrderId(data => {
+        this.mtorder = data;
       });
-      
     }
   }
-	
-
 };
 </script>
 
@@ -45,6 +40,8 @@ export default {
   height: 100%;
   overflow: hidden;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .mt-order-section {
   height: 100%;

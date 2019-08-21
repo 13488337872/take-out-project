@@ -59,8 +59,11 @@ export default {
             //port:返回端口号
             //pathname:返回路径
             //hash：返回片段 #后面的内容，常见链接 锚点
-            location.href = "http://localhost:8080/#/shopdetail"
-            console.log(nid)
+            this.$router.push({
+                path:"/shopdetail",query:{
+                    nid:nid
+                }
+            })
         }
     },
 }

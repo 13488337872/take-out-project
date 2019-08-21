@@ -2,6 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 Vue.use(VueRouter)
 
+
 //axios请求
 import axios from 'axios'
 
@@ -74,7 +75,7 @@ import mtbannereightvip from "../views/mt-banner-eightvip"
 //banner2
 import mtbannerseafood from "../views/mt-banner-seafood"
 
-//search
+//搜索
 import mtsearch from "../views/mt-search"
 
 //家常菜
@@ -88,6 +89,8 @@ import mtindexsnack from "../views/mt-index-snack";
 
 import allClassifications from '@/views/allClassifications'
 import mtOrder from '@/views/mtOrder'
+
+//import { localTake } from 'common/js/localStore' // 本地存储方法封装
 
 //导入所有的mintui
 import MintUI from 'mint-ui'
@@ -147,17 +150,17 @@ let router = new VueRouter({
       children: [
         {
           path: 'AddressEmpt',
-          component: AddressEmpty
+          component: AddressEmpty,
         },
         {
           path: '/add',
-          component: takedelivery
+          component: takedelivery,
+          meta: {
+            requiresAuth: true
+          }
         }
-      ]
-    },
-    {
-      path:"/shoppingcart",
-      component:shoppingcart,
+      ],
+      
     },
     {
       path:"/detail",
@@ -168,15 +171,15 @@ let router = new VueRouter({
       component:mtbannereightvip,
     },
     {
-      path:"/jmpsf/:num",
+      path:"/jmpsf",
       component:jmpsf,
     },
     {
-      path:"/jtlm/:num",
+      path:"/jtlm",
       component:jtlm,
     },
     {
-      path:"/mtzs/:num",
+      path:"/mtzs",
       component:mtzs,
     },
     {
@@ -184,7 +187,7 @@ let router = new VueRouter({
       component:mtbannerseafood,
     },
     {
-      path:"/orderform/:num",
+      path:"/orderform",
       component:orderform,
     },
     {
@@ -218,64 +221,69 @@ let router = new VueRouter({
     },
     
     {
-      path: '/mtIndexAfternoontea/:num',
+      path: '/mtIndexAfternoontea',
       name: 'mt-index-afternoontea',
       component: mtIndexAfternoontea
 
     },
     {
-      path: '/mtindexcooking/:num',
+      path: '/mtindexcooking',
       component: mtindexcooking
 
     },
     {
-      path: '/mtindexhamburger/:num',
+      path: '/mtindexhamburger',
       component: mtindexhamburger
 
     },
     {
-      path: '/mtindexsnack/:num',
+      path: '/mtindexsnack',
       component: mtindexsnack
 
     },
     {
-      path: '/allClassifications/:num',
+      path: '/allClassifications',
       name: '',
       component: allClassifications
     },
     {
       path: '/mtOrder',
-      name: '',
-      component: mtOrder
+      name: 'mtOrder',
+      component: mtOrder,
+    },
+    {
+      path:"/shoppingcart",
+      component:shoppingcart,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 });
 
 
-    // 全局路由守卫
-//   router.beforeEach((to, from, next) => {
-//     console.log('navigation-guards');
-//     // to: Route: 即将要进入的目标 路由对象
-//     // from: Route: 当前导航正要离开的路由
-//     // next: Function: 一定要调用该方法来 resolve 这个钩子。执行效果依赖 next 方法的调用参数。
-
-//     const nextRoute = ['detail', 'mt-order', 'jtlm'];
-//     let isLogin = global.isLogin;  // 是否登录
-//     // 未登录状态；当路由到nextRoute指定页时，跳转至login
-//     if (nextRoute.indexOf(to.name) >= 0) {  
-//       if (!isLogin) {
-//         console.log('what fuck');
-//         router.push({ name: 'login' })
-//       }
-//     }
-//     // 已登录状态；当路由到login时，跳转至home 
-//     if (to.name === 'login') {
-//       if (isLogin) {
-//         router.push({ name: 'index' });
-//       }
-//     }
-//     next();
-// });
+//全局路由守卫
+router.beforeEach((to,from,next)=>{
+  console.log(from.fullPath)
+	if(to.meta.requiresAuth){
+		if(to.meta.requiresAuth==true){
+			if(!localStorage.getItem("userId")){
+        let params = to.params;
+				params.redirect =  to.fullPath;//上一级路径
+				next({
+						name: 'mt-my-enterm',
+						params:params
+				});
+			}else{
+				next();
+			}
+		}else{
+			next();
+		}
+	}else{
+		next();
+	}
+});
 
 
 export default router;
