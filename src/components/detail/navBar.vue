@@ -1,5 +1,5 @@
 <template>
-  <div class="navBar">
+  <div class=".mt-all-navBar">
     <mt-product-navlist :data="data.col"></mt-product-navlist>
     <div class="navs">
       <div class="nav-more">

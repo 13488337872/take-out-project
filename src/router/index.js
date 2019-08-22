@@ -3,10 +3,7 @@ import VueRouter from "vue-router"
 Vue.use(VueRouter)
 
 
-//axios请求
-import axios from 'axios'
 
-Vue.prototype.axios = axios
 //主页
 import index from "../views/mt-index"
 import mtindexcenter from "../components/distribution/mt-index-center"

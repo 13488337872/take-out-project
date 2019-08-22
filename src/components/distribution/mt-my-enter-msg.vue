@@ -7,21 +7,21 @@
       <div class="section_box_inputg">
         <span>+86</span>
         <span id="section_arrowg">></span>
-        <input type="text" id="mobileNum" v-model="userId" />
+        <input type="text" id="mobileNum" v-model="user_tel" name="user_tel"/>
       </div>
       <span class="section_box_span" id="registered"></span>
       <div class="section_message_box">
-        <input type="text" id="mssagein" placeholder="请输入验证码" v-model="userpwd" />
+        <input type="text" id="mssagein" placeholder="请输入验证码" v-model="validcode" name="validcode"/>
         <span v-show="show" @click="getCode">获取验证码</span>
 				<span v-show="!show" class="mtEnterCodeFrame">{{count}}</span>
       </div>
-      <span id="mt_message">{{ passtishi }}</span>
+      <span id="mt_message"></span>
       <button @click="login()">登录</button>
     </div>
 
     <!-- 登录方式 -->
     <div class="section_typeg">
-      <router-link to="/login">
+      <router-link to="">
         <span>密码登录</span>
       </router-link>
       <span>忘记密码</span>
@@ -31,6 +31,7 @@
 
 <script>
 import $ from "jquery";
+import axios from 'axios'
 export default {
   data() {
     return {
@@ -41,52 +42,67 @@ export default {
   },
   methods: {
     getCode(){
-      const TIME_COUNT = 60;
-      if (!this.timer) {
-        this.count = TIME_COUNT;
-        this.show = false;
-        this.timer = setInterval(() => {
-        if (this.count > 0 && this.count <= TIME_COUNT) {
-          this.count--;
-        } else {
-          this.show = true;
-          clearInterval(this.timer);
-          this.timer = null;
-        }
-        }, 1000)
-      }
+      // const TIME_COUNT = 60;
+      // if (!this.timer) {
+      //   this.count = TIME_COUNT;
+      //   this.show = false;
+
+      //   this.timer = setInterval(() => {
+      //   if (this.count > 0 && this.count <= TIME_COUNT) {
+      //     this.count--;
+      //   } else {
+      //     this.show = true;
+      //     clearInterval(this.timer);
+      //     this.timer = null;
+      //   }
+      //   }, 1000)
+      // }
+      //  let xhr = new XMLHttpRequest();
+      //   xhr.open(
+      //     "POST",
+      //     "http://192.168.43.1:8060/login/",
+      //     true
+      //   );
+      //   xhr.onreadystatechange = function() {
+      //     if (xhr.status == 200 && xhr.readyState == 4) {
+      //       fun(xhr.responseText);
+      //     }
+      //   };
+      //   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset-UTF-8");
+      //   xhr.send('sendmsg='+1);
+      //   function fun(str) {
+      //       consolelog(str)
+      //   }
+
+
+
+         this.$axios({
+            url: 'http://192.168.43.1:8060/login/',
+            method:'post',
+            //发送格式为json
+            data:JSON.stringify({func:'query',
+               param:{
+                 sendmsg:1,
+               }}),
+                headers:{'Content-Type': 'application/json'}
+          }).then(function(return_data){
+            alert(return_data)
+          })
     },
     login() {
-       localStorage.setItem('userId',$("#mobileNum").val())
-        history.back()
+       //localStorage.setItem('user_tel',$("#mobileNum").val())
         // this.$router.push({
-        //   path: this.$route.params.redirect
-        // });
+        // path: this.$route.params.redirect
+        //history.back()
+        
       // let reg = /^1(3|5|8)[0-9]{9}$/;
       // let str = $("#mobileNum").val();
-      //console.log(this.userId, this.userpwd);
+      // console.log(this.user_tel, this.userpwd);
       // if (reg.test(str)) {
-        //$("#registered").html("");
+      //   $("#registered").html("");
        
-        // let xhr = new XMLHttpRequest();
-        // xhr.open(
-        //   "GET",
-        //   "logon.php",
-        //   true
-        // );
-        // xhr.onreadystatechange = function() {
-        //   if (xhr.status == 200 && xhr.readyState == 4) {
-        //     fun(xhr.responseText);
-        //   }
-        // };
-        // xhr.send(username=$("#mobileNum").val()&userpwd=$("#pwd").val());
-        // function fun(str) {
-        //   if (str == 1) {
-        //     $("#registered").html("用户名已注册");
-        //   } else if (str == 0) {
-        //     $("#registered").html("用户名可以注册");
-        //   }
-        // }
+        // 
+        
         
       // } else {
       //   $("#registered").html("手机号有误");
@@ -94,7 +110,7 @@ export default {
     },
     // login(){
     //   let xhr = new XMLHttpRequest();
-    //   xhr.open("GET","access.php?username="+$("#mobileNum").val()+"&userpwd="+$("#pwd").val(),true);
+    //   xhr.open("POST","access.php?username="+$("#mobileNum").val()+"&userpwd="+$("#pwd").val(),true);
     //   xhr.onreadystatechange = function(){
     //     if(xhr.status==200 && xhr.readyState==4){
     //       fun(xhr.responseText);
@@ -111,27 +127,10 @@ export default {
     // }
   },
   mounted() {
-    // this.$axios.post("/login", { user: this.userId, password: this.userpwd });
-    // console.log(this.userId).then(data => {
-    //   //登录失败,先不讨论
-    //   if (data.data.status != 200) {
-    //     //iViewUi的友好提示
-    //     this.$Message.error(data.data.message);
-    //     //登录成功
-    //   } else {
-    //     //设置Vuex登录标志为true，默认userLogin为false
-    //     this.$store.dispatch("userLogin", true);
-    //     //Vuex在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
-    //     //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了。
-    //     localStorage.setItem("Flag", "isLogin");
-    //     //iViewUi的友好提示
-    //     this.$Message.success(data.data.message);
-    //     //登录成功后跳转到指定页面
-    //     this.$router.push("/home");
-    //   }
-    // });
+   
   }
-};
+}
+
 </script>
 
 <style>
