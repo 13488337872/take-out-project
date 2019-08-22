@@ -26,6 +26,8 @@ const CARTINFO = `${UrlData}/api/mtorders`;
 //获取附近商铺列表接口地址
 const NEARBYSHOPLIST = `${UrlData}/api/mtShopList`;
 
+//获取附近商铺列表接口地址
+const CLASSIFCATIONS = `${UrlData}/api/classifcations`;
 export default {
   /**
    * 获取主页信息
@@ -53,6 +55,12 @@ export default {
   
   getNearbyShopList(cb){
     Api.get(NEARBYSHOPLIST,cb)
-	}
+  },
+  
+  getClassIfCations(cb){
+    Api.get(CLASSIFCATIONS,cb)
+  }
+
+  
 }
 

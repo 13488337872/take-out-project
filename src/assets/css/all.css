@@ -82,12 +82,7 @@ body{
     
 
 }
-.all-meal-le-ti,.all-meal-ri-ti{
-    margin: .11rem 0 .1rem;
 
-    /* position: sticky;
-    z-index: 1000; */
-}
 
 .all-meal p+span{
     height: .15rem;
@@ -121,7 +116,8 @@ body{
 .all-meal-le .all-meal-le-m{
     text-align: center;
     box-sizing: border-box;
-    padding: .12rem .02rem 0;
+    padding: 0 .02rem 0;
+    line-height: .47rem
 }
 .all-meal-le .all-meal-le-m div span{
     margin-bottom: .2rem;
@@ -129,6 +125,7 @@ body{
 
 .all-meal-ri{
     overflow-y: auto;
+    width: -webkit-fill-available;
 }
 .all-meal-ri .allist div img{
     width: .42rem;
@@ -140,23 +137,36 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    line-height: .35rem;
+    position: sticky;
+    top: 0;
+    background: #f1f1f1;
 }
 .allist{
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: .16rem .23rem 0;
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    justify-content: space-between;
-
-    /* overflow-y: auto; */
-
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    overflow-y: auto;
 }
+
 .allist .allist-m{
-    display: flex;
-    flex-direction: column;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
-    flex-wrap: wrap;
-    width: .61rem;
+    -ms-flex-wrap: wrap;
+    width: 33.3%;
+    float: left;
+    margin-bottom: .1rem;
 }
 .allist .allist-m span{
     margin-bottom: .22rem;

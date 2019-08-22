@@ -1,7 +1,7 @@
 <template>
   <div class="all-meal">
-    <mt-allclass-allmealleft></mt-allclass-allmealleft>
-    <mt-allclass-allmealright></mt-allclass-allmealright>
+    <mt-allclass-allmealleft :data=data.deliciousClass></mt-allclass-allmealleft>
+    <mt-allclass-allmealright :data=data.deliciousClass></mt-allclass-allmealright>
   </div>
 </template>
 
@@ -16,6 +16,9 @@ export default {
 
     }
   },
+  props:[
+    "data"
+  ],
   components:{
     "mt-allclass-allmealleft":allMealLeft,
     "mt-allclass-allmealright":allMealRight
