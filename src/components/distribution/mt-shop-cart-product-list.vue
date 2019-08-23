@@ -1,16 +1,16 @@
 <template>
  <div class="mt-shop-product-list">
-    <mt-shop-cart-product :data="item" v-for="item in data"></mt-shop-cart-product>
+     <mt-shop-cart-product :pCheck="pCheck" :data="product" :sid="sid" :pid="pid" :key="pid" v-for="(product,pid) in data"></mt-shop-cart-product>
  </div>
 </template>
 
 <script>
-import mtShopCartProduct from './mt-shop-cart-product'
+import mtshopcartproduct from './mt-shop-cart-product'
 export default {
     name:"mtShopCartProductList",
-    props:["data"],
+    props:["data","sid","pCheck"],
     components:{
-        "mt-shop-cart-product":mtShopCartProduct
+        "mt-shop-cart-product":mtshopcartproduct
     }
 }
 </script>

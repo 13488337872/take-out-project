@@ -6,131 +6,86 @@
     <div class="section_boxg">
       <div class="section_box_inputg">
         <span>+86</span>
-        <span id="section_arrowg">></span>
-        <input type="text" id="mobileNum" v-model="user_tel" name="user_tel"/>
+        <span id="section_arrowg">&gt;</span>
+        <input type="text" id="mobileNum" v-model="user_tel" name="user_tel" />
       </div>
       <span class="section_box_span" id="registered"></span>
       <div class="section_message_box">
-        <input type="text" id="mssagein" placeholder="请输入验证码" v-model="validcode" name="validcode"/>
+        <input type="text" id="mssagein" placeholder="请输入验证码" v-model="validcode" name="validcode" />
         <span v-show="show" @click="getCode">获取验证码</span>
-				<span v-show="!show" class="mtEnterCodeFrame">{{count}}</span>
+        <span v-show="!show" class="mtEnterCodeFrame">{{count}}</span>
       </div>
       <span id="mt_message"></span>
-      <button @click="login()">登录</button>
+      <button @click="Login()">登录</button>
     </div>
 
     <!-- 登录方式 -->
     <div class="section_typeg">
-      <router-link to="">
+      <router-link to>
         <span>密码登录</span>
       </router-link>
       <span>忘记密码</span>
     </div>
   </section>
 </template>
-
 <script>
 import $ from "jquery";
-import axios from 'axios'
+import axios from "axios";
 export default {
   data() {
     return {
-      show:true,
-      count:" ",
-      timer:null,
+      show: true,
+      count: " ",
+      timer: null
     };
   },
   methods: {
-    getCode(){
-      // const TIME_COUNT = 60;
-      // if (!this.timer) {
-      //   this.count = TIME_COUNT;
-      //   this.show = false;
-
-      //   this.timer = setInterval(() => {
-      //   if (this.count > 0 && this.count <= TIME_COUNT) {
-      //     this.count--;
-      //   } else {
-      //     this.show = true;
-      //     clearInterval(this.timer);
-      //     this.timer = null;
-      //   }
-      //   }, 1000)
-      // }
-      //  let xhr = new XMLHttpRequest();
-      //   xhr.open(
-      //     "POST",
-      //     "http://192.168.43.1:8060/login/",
-      //     true
-      //   );
-      //   xhr.onreadystatechange = function() {
-      //     if (xhr.status == 200 && xhr.readyState == 4) {
-      //       fun(xhr.responseText);
-      //     }
-      //   };
-      //   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset-UTF-8");
-      //   xhr.send('sendmsg='+1);
-      //   function fun(str) {
-      //       consolelog(str)
-      //   }
-
-
-
-         this.$axios({
-            url: 'http://192.168.43.1:8060/login/',
-            method:'post',
-            //发送格式为json
-            data:JSON.stringify({func:'query',
-               param:{
-                 sendmsg:1,
-               }}),
-                headers:{'Content-Type': 'application/json'}
-          }).then(function(return_data){
-            alert(return_data)
-          })
+    getCode() {
+      //发送验证码按键函数
+      this.$axios({
+        method: "post",
+        url: "http://192.168.0.128:8060/logintel/",
+        data: {
+          sendmsg: 1,
+          user_tel: this.user_tel
+        }
+      }).then(res => {
+        let rs = res.data;
+        console.log(res.data);
+      });
     },
-    login() {
-       //localStorage.setItem('user_tel',$("#mobileNum").val())
-        // this.$router.push({
-        // path: this.$route.params.redirect
-        //history.back()
-        
-      // let reg = /^1(3|5|8)[0-9]{9}$/;
-      // let str = $("#mobileNum").val();
-      // console.log(this.user_tel, this.userpwd);
-      // if (reg.test(str)) {
-      //   $("#registered").html("");
-       
-        // 
-        
-        
-      // } else {
-      //   $("#registered").html("手机号有误");
-      // }
-    },
-    // login(){
-    //   let xhr = new XMLHttpRequest();
-    //   xhr.open("POST","access.php?username="+$("#mobileNum").val()+"&userpwd="+$("#pwd").val(),true);
-    //   xhr.onreadystatechange = function(){
-    //     if(xhr.status==200 && xhr.readyState==4){
-    //       fun(xhr.responseText);
-    //     }
-    //   }
-    //   xhr.send();
-    //   function fun(str){
-    //     if(str==0){
-    //       this.$router.push({
-    //         path: this.$route.params.redirect
-    //       });
-    //     }
-    //   }
-    // }
-  },
-  mounted() {
-   
+
+    Login() {
+      //登录按键函数
+      this.$axios({
+        method: "post",
+        url: "http://192.168.0.128:8060/logintel/",
+        data: {
+          dosubmit: 1,
+          user_tel: this.user_tel,
+          validcode: this.validcode
+        }
+      }).then(res => {
+        let rs = res.data.status;
+        console.log(res.data.info);
+        if(rs==0){
+          console.log("恭喜登录成功")
+          localStorage.setItem('user_tel',res.data.info);
+          history.back()
+        }
+        if(rs==1){
+          console.log("请输入验证码")
+        }
+        if(rs==2){
+          console.log("验证码无效或已过期")
+        }
+        if(rs==3){
+          console.log("验证码输入有误")
+        }
+      });
+    }
   }
-}
-
+};
 </script>
 
 <style>
@@ -171,9 +126,10 @@ export default {
   float: left;
   height: 0.22rem;
   border: 0;
+  outline: none;
 }
-.mtEnterCodeFrame{
-  width: .7rem;
+.mtEnterCodeFrame {
+  width: 0.7rem;
   text-align: center;
   color: red;
 }
@@ -236,11 +192,15 @@ export default {
   width: 100%;
   height: 0.32rem;
   border-bottom: 1px solid #989898;
+  outline: none;
 }
 #mssagein::-webkit-input-placeholder {
   color: #fdce5a;
   font-size: 0.16rem;
   border: 0;
   background: 0;
+}
+.entermsgbtm {
+  outline: none;
 }
 </style>

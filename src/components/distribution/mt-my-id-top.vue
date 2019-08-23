@@ -1,6 +1,6 @@
 <template>
 	<header class="mt-my-head">
-		<router-link to="">
+		<router-link :to="{path:'/mtMyRedlist'}">
 			<img src="/img/my/arr.png" alt="">
 		</router-link>
 		
@@ -9,6 +9,11 @@
 </template>
 
 <script>
+export default {
+	mounted() {
+		console.log(this.$router)
+	},
+}
 </script>
 
 <style scoped="scoped">

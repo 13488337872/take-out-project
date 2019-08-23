@@ -116,7 +116,14 @@ html{
 }
 /*  */
 .KFC_Caidan{
-	height: inherit;
+	background: white;
+    z-index: 10;
+    float: left;
+	width: 100%;
+	box-sizing: border-box;
+	height: 100%;
+	position: sticky;
+	top: 0;
 }
 .KFC_Caidan .KFC_diancai_{
 	display: flex;
@@ -125,6 +132,13 @@ html{
 	padding-top: .085rem;
 	border-bottom: 1px solid #eeeeee;
 	line-height: .125rem;
+}
+.KFC_diancai_{
+	background: white;
+    z-index: 10;
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
 }
 .KFC_diancai_ .ul_header{
 	display: flex;
@@ -157,17 +171,17 @@ html{
 }
 /*  */
 .KFC_xinpin_List{
-	height: inherit;
 	overflow-y: auto;
+    float: left;
 }
 .KFC_diancai_two{
-	display: flex;
-	height: inherit;
+	height: 100%;
+	
 }
 .KFC_xinpin{
 	width: .8rem;
-	height: inherit;
-	overflow-y: auto;
+    overflow-y: auto;
+    float: left;
 }
 .KFC_xinpin h6{
 	text-align: center;
@@ -176,9 +190,10 @@ html{
 	font-size: .125rem;
 }
 .KFC_xinpin .ul_body{
-	background: #f8f8f8;
-	border-top-right-radius: .15rem;
+	background: #eaeaea;
 	font-size: .125rem;
+	height: inherit;
+	box-sizing: border-box;
 }
 .KFC_xinpin .ul_body li{
 	color: #6b6b6b;
@@ -204,8 +219,12 @@ html{
 	display: flex;
 	padding-top: .44rem;
 }
+.KFC_xinpin_ .img_one:nth-child(2){
+	padding-top:0;
+}
 .KFC_xinpin_ .img_one .img_{
 	width: 1.08rem;
+	height: 1.14rem;
 }
 .KFC_xinpin_ .img_two{
 	padding-right: .22rem;

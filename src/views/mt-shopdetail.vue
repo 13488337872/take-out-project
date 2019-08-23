@@ -12,7 +12,7 @@
 		<div class="KFC_ZJS">
 			<div class="ZJS_Onetext">
 				<h3>{{mtNearbyShopList.nearbyShopName}}</h3>
-				<img src="img/KFC02_03.png"/>
+				<img :src="mtNearbyShopList.nearbyShopPic"/>
 			</div>
 			<div class="ZJS_Twotext">
 				<span class="iconfont icon-songhuozhunshi"></span>
@@ -50,7 +50,7 @@
 					<div class="KFC_xinpin_" v-for="(item,key) in mtNearbyShopList.shopOrder" :key=key>
 						<span>{{item.shopFoodMenu}}</span>
 						<div class="img_one" @click="mtShopDetailSkip()" v-for="(item,foodId) in item.shopFoodList" :key=foodId>
-							<img  class="img_" src="/img/food.png">
+							<img  class="img_" :src="item.foodImg.url">
 							<div class="img_two">
 								<h2>{{item.foodName}}</h2>
 								<p class="img_two_text">主要原料:面粉，糖</p>
@@ -76,29 +76,42 @@ import index from '../apis/index'
 export default {
 	data() {
 		return {
-			mtNearbyShopList:{}
+			mtNearbyShopList:{},
+			shopId : this.$route.query.shopId
 		}
 	},
 	mounted () {
 		window.addEventListener('scroll', this.handleScroll)
 	},
 	created() {
-		this.mtNearbyShopLists()
+		this.mtNearbyShopLists(this.shopId)
 	},
     methods: {
 		handleScroll () {
 			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 			// console.log(scrollTop);
-			if(scrollTop>=200){
-				$(".KFC_xinpin_ span").css({
-					top:".55rem"
-				})
-			}
-			if(scrollTop<200){
-				$(".KFC_xinpin_ span").css({
-					top:"0"
-				})
-			}
+			// if(scrollTop>=200){
+			// 	$(".KFC_xinpin_ span").css({
+			// 		top:".55rem"
+			// 	})
+			// 	$(".img_two :first").css({
+			// 		marginTop: ".55rem"
+			// 	})
+			// 	$(".img_one :first").css({
+			// 		marginTop: ".55rem"
+			// 	})
+			// }
+			// if(scrollTop<200){
+			// 	$(".KFC_xinpin_ span").css({
+			// 		top:"0"
+			// 	})
+			// 	$(".img_two :first").css({
+			// 		marginTop: ""
+			// 	})
+			// 	$(".img_one :first").css({
+			// 		marginTop: ""
+			// 	})
+			// }
 		},
 		backhistory(){
 			history.back()
@@ -108,15 +121,10 @@ export default {
 				path: "/detail"
 			});
 		},
-		mtNearbyShopLists(){
-			
-			index.getNearbyShopList(data=>{
-				for(let i=0;i<data.nearbuShopList.length;i++){
-					if(data.nearbuShopList[i].id==this.$route.query.nid){
-						this.mtNearbyShopList = data.nearbuShopList[this.$route.query.nid]
-						console.log(this.mtNearbyShopList)
-					}
-				}
+		mtNearbyShopLists(shopId){
+			console.log(shopId)
+			index.getNearbyShopList(shopId,data=>{
+				this.mtNearbyShopList = data
 			})
 		}
 	},
@@ -126,10 +134,9 @@ export default {
 <style scoped>
 @import url(../assets/css/mt-shopdetail.css);
 .KFC_diancai_{
-	position: sticky;
-	top: 0;
 	background: white;
 	z-index: 10;
+	height: .55rem;
 }
 
 </style>    

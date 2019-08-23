@@ -18,8 +18,8 @@
       <!-- 菜单 -->
       <div class="menu">
         <li v-for="(item,pid) in data.menu" :key="pid" @click="skip(pid)">
-			<img :src="item.menuPic" />
-			<p>{{item.menuName}}</p>
+			<img :src="item.navPic" />
+			<p>{{item.navName}}</p>
         </li>
       </div>
 	  <img class="indexgwc" @click="shopcart()" src="/img/indexgouwuche.png" alt="">

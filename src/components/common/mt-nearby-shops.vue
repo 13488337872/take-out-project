@@ -9,7 +9,7 @@
             </p>
 		</div>
         <div class="nearbyShopsList">
-            <li v-for="(item,nid) in data" :key="nid" @click="mtShopdetail(nid)">
+            <li v-for="(item,shopId) in data" :key="shopId" @click="mtShopdetail(shopId)">
                 <img :src=item.nearbyShopPic alt="">
                 <div class="shopsDetails">
                     <div class="detailsTop">
@@ -52,7 +52,7 @@
 export default {
     props:["data"],
     methods: {
-        mtShopdetail(nid){
+        mtShopdetail(shopId){
             //href:设置或者获取地址栏信息路径
             //search：获取地址栏参数 例：(?name=zj&age=18)
             //host:返回主机（域名）
@@ -61,7 +61,7 @@ export default {
             //hash：返回片段 #后面的内容，常见链接 锚点
             this.$router.push({
                 path:"/shopdetail",query:{
-                    nid:nid
+                    shopId:shopId+1
                 }
             })
         }
