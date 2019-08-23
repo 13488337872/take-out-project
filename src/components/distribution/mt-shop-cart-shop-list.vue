@@ -2,7 +2,7 @@
 	<div class="shoppingcar">
 	  <div class="shopping-top">
 	    <span></span>
-		<input type="checkbox" :sCheck="sCheck(sid)" v-model="data.checked" style="vertical-align: middle;height: 0.24rem;"/>
+		<input type="checkbox" @change="sCheck(sid)" v-model="data.checked" style="vertical-align: middle;height: 0.24rem;"/>
 	    <div>
 			
 	      <p>
@@ -14,7 +14,7 @@
 	      </p>
 	    </div>
 	  </div>
-	 <mt-shop-cart-product-list :pCheck="pCheck"  :data="data.products" :sid="sid"></mt-shop-cart-product-list>
+	 <mt-shop-cart-product-list :pCheck="pCheck" :data="data.products" :sid="sid"></mt-shop-cart-product-list>
 	  <p class="cost">
 	    <span class="cost-s1">包装费</span>
 	    <span>￥{{data.PackingFee}}</span>
@@ -40,7 +40,7 @@
 import mtShopCartProductList from './mt-shop-cart-product-list'
 export default {
   name: "mtShopCartShopList",
-  props: ["data","sid","pCheck","sCheck"],
+  props: ["data","sid","sCheck","pCheck"],
   components: {
     "mt-shop-cart-product-list": mtShopCartProductList
   },

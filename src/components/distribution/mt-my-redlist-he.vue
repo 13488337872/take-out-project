@@ -23,9 +23,9 @@ export default {
     methods: {
         mtlogin(){
           // 组件中使用post方法
-          console.log(!localStorage.getItem("userId"))
-          if(!localStorage.getItem("userId")){
-            this.$router.push({path:'/login'})
+          console.log(!localStorage.getItem("user_tel"))
+          if(!localStorage.getItem("user_tel")){
+            this.$router.push({path:'/mt-my-enterm'})
           }else{
             this.$router.push({path:"/mt-my-id"})
           }
@@ -36,11 +36,11 @@ export default {
        * @returns localStorage数据 arr
        */
       getDate() {
-        this.userAiready = localStorage.getItem("userId")
+        this.userAiready = localStorage.getItem("user_tel")
       }
     },
     mounted(){
-      if(!localStorage.getItem("userId")){
+      if(!localStorage.getItem("user_tel")){
         this.userAiready = "登录/注册"
       }else{
         this.getDate()

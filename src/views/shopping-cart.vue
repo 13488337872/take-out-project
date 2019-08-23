@@ -35,7 +35,8 @@ export default {
      * 
      *  */
      _initPageData() {
-        index.getMtShopCar((data) => {
+        index.getMtShopCar(data => {
+          console.log(data)
           this.shopCarInfo = data;
         })
       },
@@ -80,12 +81,12 @@ export default {
       *pid 商品的编号
      */
     productCheckAll(sid,pid){
-      console.log(pid);
-     //判断是那个店铺被选中
+    //  //判断是那个店铺被选中
       let isChecked = this.shopCarInfo.shops[sid].products.every((product, pid, arr) => {
           return product.checked == true
           
       }) 
+      console.log(isChecked);
        //当前的店铺的状态
         this.shopCarInfo.shops[sid].checked = isChecked;
 

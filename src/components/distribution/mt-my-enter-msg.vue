@@ -7,15 +7,17 @@
       <div class="section_box_inputg">
         <span>+86</span>
         <span id="section_arrowg">&gt;</span>
-        <input type="text" id="mobileNum" v-model="user_tel" name="user_tel" />
+        <input type="text" id="mobileNum" v-model="user_tel" name="user_tel" @blur="animateWidth(user_tel)"/>
+        <span id="msg_wrong_span" v-if="isShow"></span>
       </div>
-      <span class="section_box_span" id="registered"></span>
+      <span class="section_box_span" id="registered" style="color:red">{{msg_wrong_span}}</span>
       <div class="section_message_box">
         <input type="text" id="mssagein" placeholder="请输入验证码" v-model="validcode" name="validcode" />
+        
         <span v-show="show" @click="getCode">获取验证码</span>
         <span v-show="!show" class="mtEnterCodeFrame">{{count}}</span>
       </div>
-      <span id="mt_message"></span>
+      <span id="mt_message">{{mt_message}}</span>
       <button @click="Login()">登录</button>
     </div>
 
@@ -36,22 +38,37 @@ export default {
     return {
       show: true,
       count: " ",
-      timer: null
+      timer: null,
+      isShow:false,
+      mt_message:"",
+      msg_wrong_span:""
     };
   },
   methods: {
+    //判断手机号是否输入正确
+    animateWidth(userid){
+      let reg = /^1(3|5|8|4|6|7|9)[0-9]{9}$/i;
+      if(reg.test(userid)){
+        this.isShow=false
+      }else{
+        this.isShow=true
+      }
+    },
+
     getCode() {
+      console.log("11")
       //发送验证码按键函数
       this.$axios({
         method: "post",
-        url: "http://192.168.0.128:8060/logintel/",
+        url: "http://10.35.170.75:8000/logintel/",
         data: {
           sendmsg: 1,
           user_tel: this.user_tel
         }
       }).then(res => {
         let rs = res.data;
-        console.log(res.data);
+        alert(res.data.message);
+        this.msg_wrong_span = res.data.message
       });
     },
 
@@ -59,7 +76,7 @@ export default {
       //登录按键函数
       this.$axios({
         method: "post",
-        url: "http://192.168.0.128:8060/logintel/",
+        url: "http://10.35.170.75:8000/logintel/",
         data: {
           dosubmit: 1,
           user_tel: this.user_tel,
@@ -67,21 +84,8 @@ export default {
         }
       }).then(res => {
         let rs = res.data.status;
-        console.log(res.data.info);
-        if(rs==0){
-          console.log("恭喜登录成功")
-          localStorage.setItem('user_tel',res.data.info);
-          history.back()
-        }
-        if(rs==1){
-          console.log("请输入验证码")
-        }
-        if(rs==2){
-          console.log("验证码无效或已过期")
-        }
-        if(rs==3){
-          console.log("验证码输入有误")
-        }
+        alert(res.data.info);
+        this.mt_message = res.data.info
       });
     }
   }
@@ -89,6 +93,12 @@ export default {
 </script>
 
 <style>
+#msg_wrong_span{
+  font-size:0.12rem;
+  color:red;
+  margin-top:.12rem;
+  margin-left:-.8rem;
+}
 .mt-my-passg {
   width: 100%;
   /* box-shadow: 0 0 .05rem #e5e5e5; */
@@ -150,6 +160,7 @@ export default {
   color: #040403;
   margin-bottom: 0.32rem;
   font-size: 0.18rem;
+  outline:none;
 }
 #mt_message {
   font-size: 0.1rem;

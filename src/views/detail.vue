@@ -25,10 +25,14 @@
       data:function(){
         return{
           indexInfo:{}
+          
         }
       },
     created: function () {
       this._initPageData();
+    },
+    mounted() {
+      console.log(this.$route.query.foods)
     },
     methods: {
       _initPageData() {

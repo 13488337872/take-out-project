@@ -27,6 +27,7 @@ export default {
   methods: {
     _getMtOrder() {
       index.getOrderInfoByOrderId(data => {
+        console.log(data)
         this.mtorder = data;
       });
     }

@@ -73,7 +73,8 @@ header {
 .hd-1 img {
     width: .1rem;
     height: .17rem;
-    padding-left: .2rem;
+    position: absolute;
+    left: .2rem;
 }
 
 .hd-1 h4 {

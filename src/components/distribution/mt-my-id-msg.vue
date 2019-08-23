@@ -3,14 +3,14 @@
 	<div class="my_section_box">
 		<h6>头像</h6>
 		<div class="my_section_right">
-			<div class="my_section_div"><img src="" alt=""><img src="/img/my/tou.png" alt="" id="img_cir"></div>
+			<div class="my_section_div"><img src="" alt=""><img src="/img/logo.jpg" alt="" id="img_cir"></div>
 			<img src="/img/my/right.png" alt="" class="my_section_img" id="img_arrow">
 		</div>
 	</div>
 	<div class="my_section_box">
 		<h6>用户名</h6>
 		<div class="my_section_right">
-			<div class="my_section_div"><span>晚安，地球人</span></div>
+			<div class="my_section_div"><span>{{mtMyIdUser}}</span></div>
 			<img src="/img/my/right.png" alt="" class="my_section_img">
 		</div>
 	</div>
@@ -39,6 +39,16 @@
 </template>
 
 <script>
+export default {
+	data() {
+		return {
+			mtMyIdUser:""
+		}
+	},
+	mounted() {
+		this.mtMyIdUser = localStorage.getItem("user_tel")
+	},
+}
 </script>
 
 <style>

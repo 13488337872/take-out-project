@@ -1,6 +1,6 @@
 <template>
-  <index-loading v-if="mtindexloading"></index-loading>
-  <div class="mt-index" v-else>
+  <!-- <index-loading v-if="mtindexloading"></index-loading> -->
+  <div class="mt-index">
     <router-view :data="navdata"></router-view>
     <index-footer :data="navdata.Activity"></index-footer>
   </div>

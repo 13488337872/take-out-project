@@ -49,22 +49,23 @@
 				<div class="KFC_xinpin_List">
 					<div class="KFC_xinpin_" v-for="(item,key) in mtNearbyShopList.shopOrder" :key=key>
 						<span>{{item.shopFoodMenu}}</span>
-						<div class="img_one" @click="mtShopDetailSkip()" v-for="(item,foodId) in item.shopFoodList" :key=foodId>
-							<img  class="img_" :src="item.foodImg.url">
-							<div class="img_two">
-								<h2>{{item.foodName}}</h2>
-								<p class="img_two_text">主要原料:面粉，糖</p>
-								<p class="img_two_text">月售{{item.foodSale}}&nbsp;&nbsp;赞0</p>
-								<div class="red_elv">
-									<p class="elv">￥{{item.foodPrice}}</p>
-									<p class="iconfont icon-add-fill"></p>
+						<div class="ST">
+							<div class="img_one" @click="mtShopDetailSkip()" v-for="(item,foodId) in item.shopFoodList" :key=foodId>
+								<img  class="img_" :src="item.foodImg.url">
+								<div class="img_two">
+									<h2>{{item.foodName}}</h2>
+									<p class="img_two_text">主要原料:面粉，糖</p>
+									<p class="img_two_text">月售{{item.foodSale}}&nbsp;&nbsp;赞0</p>
+									<div class="red_elv">
+										<p class="elv">￥{{item.foodPrice}}</p>
+										<p class="iconfont icon-add-fill"></p>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					
 				</div>
-				
 			</div>
 		</div>
 	</div>

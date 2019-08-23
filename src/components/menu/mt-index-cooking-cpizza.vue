@@ -4,26 +4,10 @@
         <div class="pizza-eat">
             <h4>暖心的汤.致努力的你</h4>
             <div class="pizza-big">
-                <div class="pizza-food">
-                    <a href="#">
-                        <img src="/img/cfeet.jpg" alt="">
-                        <p>去骨藤椒鸡爪</p>
-                        <p>￥22.8 <del>￥48.8</del></p>
-                    </a>
-                </div>
-                <div class="pizza-food">
-                    <a href="#">
-                        <img src="/img/cfeet.jpg" alt="">
-                        <p>去骨藤椒鸡爪</p>
-                        <p>￥22.8 <del>￥48.8</del></p>
-                    </a>
-                </div>
-                <div class="pizza-food">
-                    <a href="#">
-                        <img src="/img/cfeet.jpg" alt="">
-                        <p>去骨藤椒鸡爪</p>
-                        <p>￥22.8 <del>￥48.8</del></p>
-                    </a>
+                <div class="pizza-food" v-for="item in data">
+                        <img :src=item.soupimg alt="">
+                        <p>{{item.soupspan}}</p>
+                        <p>{{item.soupprice}}<del>￥48.8</del></p>
                 </div>
             </div>
         </div>
@@ -31,7 +15,8 @@
 </template>
 <script>
 export default {
-    
+    name:"",
+    props:["data"]
 }
 </script>
 <style scoped>

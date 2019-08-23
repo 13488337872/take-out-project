@@ -22,7 +22,7 @@ export default {
             this.$router.push({
               path: "/mtMyRedlist"
             });
-            localStorage.removeItem("userId");
+            localStorage.removeItem("user_tel");
           }
         })
         .catch(error => {

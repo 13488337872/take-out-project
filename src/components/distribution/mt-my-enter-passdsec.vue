@@ -78,6 +78,7 @@ export default {
 	float:left;
 	height:.22rem;
 	border:0;
+	outline:none;
 }
 .section_box_input img{
 	width: .19rem;
@@ -97,6 +98,7 @@ export default {
 	color:black;
 	margin-bottom:.32rem;
 	font-size:.18rem;
+	outline:none;
 }
 /* 登录方式 */
 .section_type{

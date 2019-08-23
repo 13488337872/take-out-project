@@ -9,7 +9,7 @@
 import mtShopCartShopList from "./mt-shop-cart-shop-list";
 export default {
   name: "mtshopcartcenter",
-  props: ["data","pCheck","sCheck"],
+  props: ["data","sCheck","pCheck"],
   components: {
     "mt-shop-cart-shop-list": mtShopCartShopList
   }

@@ -46,30 +46,43 @@ export default {
             return num;
        },
         total(shopCarInfo){
-           let total = 0;
-		   let price = 0;
-		   let index = 0;
+           let totals = 0;
+           let num = 0;
+           let price = 0;
             shopCarInfo.shops.forEach((shop,sid) => {
+                let index = 0;
                 shop.products.forEach((product,pid)=>{
                     if(product.checked){
-                        total += product.productPrice * product.productNum;
+                        price += product.productPrice * product.productNum;
                     }
                 })
-				for(var total in shop[sid].price){
-					if(total > shop[sid].price[i].total){
-						index = i;
-					}
-				}
-				shop.productSjg = shop.price[index].totalJg;
-				price += shop.productSjg;
-				tatol = tatol + shop.PackingFee + shop.DistributionFee;
-            });
-			total -= price;
-			shopCarInfo.totalSjg = price;
-            return total;
+                price = price + shop.PackingFee + shop.DistributionFee;
+                for(var i in shop.price){
+                    if(price > shop.price[i].total){
+                        let a = Number(i)+1;
+                        if(a <= 4){
+                            if(price < shop.price[a].total){
+                                index = i;
+                            }
+                        }else{
+                            index =4;
+                        }
+                    }
+                }
+                 num+=shop.price[index].totalJg;
+                 index=0;
+                 totals += price;
+                 price = 0;
+                let a= shop.DistributionFeeSjg-shop.DistributionFee;
+                let b = shop.PackingFeeSjg-shop.PackingFee;
+                 num = num + a + b;
+            })
+            shopCarInfo.totalSjg = num;
+            totals = totals - num;
+            return totals;
        }
-    }
-}
+    } 
+}     
 </script>
 
 <style scoped>

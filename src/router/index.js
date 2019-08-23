@@ -264,7 +264,7 @@ router.beforeEach((to,from,next)=>{
   console.log(from.fullPath)
 	if(to.meta.requiresAuth){
 		if(to.meta.requiresAuth==true){
-			if(!localStorage.getItem("userId")){
+			if(!localStorage.getItem("user_tel")){
         let params = to.params;
 				params.redirect =  to.fullPath;//上一级路径
 				next({
