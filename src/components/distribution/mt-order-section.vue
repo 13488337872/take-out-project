@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-order-section">
+  <div class="mt-order-section" v-if="mtorderhas">
     <div class="taking_section_store" v-for="(item,key) in data" :key="key">
       <div class="taking_store_top">
         <img :src="item.orderimg" alt />
@@ -27,15 +27,42 @@
       </div>
     </div>
   </div>
+  <div class="mt-order-failart" v-else>
+		<span id="bg_span">
+			暂无订单
+		</span>
+	</div>
 </template>
-
 <script>
+import mtorderfail from './mt-order-fail'
 export default {
+  component:{
+    "mt-order-fail":mtorderfail
+  },
+  data() {
+    return {
+      mtorderhas:false
+    }
+  },
   props: ["data"]
 };
 </script>
 
 <style scoped="scoped">
+.mt-order-failart{
+	width:100%;
+	height:100%;
+	background:url(/img/taking/bg.png);
+	background-size:100% 98%;
+	position:relative;
+}
+.mt-order-failart span{
+	font-size:.13rem;
+	color:#747273;
+	position:absolute;
+	top:56%;
+	left:39%;
+}
 .mt-order-section {
   width: 100%;
   /* display:none; */

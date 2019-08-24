@@ -9,7 +9,7 @@
             </p>
 		</div>
         <div class="nearbyShopsList">
-            <li v-for="(item,shopId) in data" :key="shopId" @click="mtShopdetail(shopId)">
+            <li v-for="(item,shopId) in data" :key="shopId" @click="mtShopdetail(shopId,item)">
                 <img :src=item.nearbyShopPic alt="">
                 <div class="shopsDetails">
                     <div class="detailsTop">
@@ -32,7 +32,7 @@
                             <span>起送￥{{item.nearbyShopSend}}</span>
                             <span>配送￥1</span>
                             <span>人均￥10</span>
-                            <img src="/img/meituan.png" alt="">
+                            <img v-if="item.nearbyShopAdvtange==2" src="/img/meituan.png" alt="">
                         </div>
                     </div>
                     <div class="detailsSale classify">
@@ -52,7 +52,7 @@
 export default {
     props:["data"],
     methods: {
-        mtShopdetail(shopId){
+        mtShopdetail(shopId,shopProduct){
             //href:设置或者获取地址栏信息路径
             //search：获取地址栏参数 例：(?name=zj&age=18)
             //host:返回主机（域名）
@@ -61,7 +61,7 @@ export default {
             //hash：返回片段 #后面的内容，常见链接 锚点
             this.$router.push({
                 path:"/shopdetail",query:{
-                    shopId:shopId+1
+                    shopId:shopId+1,shopProduct:shopProduct
                 }
             })
         }

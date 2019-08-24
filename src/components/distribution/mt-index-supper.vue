@@ -12,7 +12,7 @@
     <div class="optList">
       <li v-for="(opt,sid) in data.optList" :key="sid">
         <img :src="opt.optPic" alt />
-        <h4>年味水饺（科技四路店）</h4>
+        <h4></h4>
         <p>
           {{opt.optRecom}}
           <img src="/img/del.png" alt />
@@ -25,6 +25,11 @@
 export default {
   name: "index-supper",
   props: ["data"],
+  data() {
+    return {
+      
+    }
+  },
   mounted: {}
 };
 </script>

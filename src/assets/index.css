@@ -316,7 +316,8 @@ body>div{
 	font-size: .12rem;
 }
 .nearbyShopsTOP p span{
-	margin-right: .25rem;
+	margin:0 .25rem;
+	font-size: .16rem;
 }
 .nearbyShopsList{
 	width: 100%;
@@ -344,7 +345,8 @@ body>div{
 	float: left;
 	white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis
+	text-overflow: ellipsis;
+	width: 2.6rem;
 }
 .detailsTop i{
 	float: right;

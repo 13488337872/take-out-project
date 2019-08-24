@@ -1,8 +1,8 @@
 <template>
-  <!-- <index-loading v-if="mtindexloading"></index-loading> -->
-  <div class="mt-index">
-    <router-view :data="navdata"></router-view>
-    <index-footer :data="navdata.Activity"></index-footer>
+  <index-loading v-if="mtindexloading"></index-loading>
+  <div class="mt-index" v-else>
+    <router-view v-if="navdata.Activity" :data="navdata"></router-view>
+    <index-footer v-if="navdata.Activity" :data="navdata.Activity"></index-footer>
   </div>
 </template>
 <script>
@@ -35,7 +35,7 @@ export default {
             this.navdata = data;
             this.mtindexloading = false
           });
-       },2000)
+       },1000)
     }
   }
 };

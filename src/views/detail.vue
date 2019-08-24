@@ -1,79 +1,38 @@
 <template>
   <div class="mt-detail">
-    <mt-product-header v-if="indexInfo" :data="indexInfo"></mt-product-header>
-    <mt-product-nav v-if="indexInfo" :data="indexInfo"></mt-product-nav>
-    <mt-product-deatil v-if="indexInfo" :data="indexInfo"></mt-product-deatil>
-    <mt-product-elva v-if="indexInfo" :data="indexInfo"></mt-product-elva>
+    <mt-product-header v-if="foodsInfo" :Pcheck="shopInfo" :data="foodsInfo"></mt-product-header>
+    <mt-product-elva></mt-product-elva>
+    <mt-product-detail v-if="foodsInfo" :data="foodsInfo"></mt-product-detail>
   </div>
 </template>
 
 <script>
   import dtHeader from '../components/detail/dtHeader'
-  import navBar from '../components/detail/navBar'
-  import dtDetail from '../components/detail/dtDetail'
   import mtElava from '../components/detail/mtElava'
-  import index from '../apis/index.js'
+  import detail from '../components/detail/detail'
 
   export default {
         name: "detail",
       components:{
         "mt-product-header":dtHeader,
-        "mt-product-nav":navBar,
-        "mt-product-deatil":dtDetail,
-        "mt-product-elva":mtElava
+        "mt-product-elva":mtElava,
+        "mt-product-detail":detail
       },
       data:function(){
         return{
-          indexInfo:{}
-          
+          foodsInfo:{},
+          shopInfo:{}
         }
       },
     created: function () {
-      this._initPageData();
+      
     },
     mounted() {
-      console.log(this.$route.query.foods)
+      console.log(this.$route.query.foodsproduct,this.$route.query.shopid,this.$route.query.foodsid,this.$route.query.shopProduct)
+      this.foodsInfo = this.$route.query.foodsproduct,
+      this.shopInfo = this.$route.query.shopProduct
     },
     methods: {
-      _initPageData() {
-        index.getMtDetail((data) => {
-          console.log(data)
-          this.indexInfo = data;
-        })
-      },
-      _Progress: function () {
-        let i = 0;
-        let per01 = parseFloat($("#prosess01").parent().children().eq(1).html());
-        let per02 = parseFloat($("#prosess02").parent().children().eq(1).html());
-        let per03 = parseFloat($("#prosess03").parent().children().eq(1).html());
-
-        console.log(parseFloat($("#prosess01").parent().children().eq(1).html()));
-
-        let timer01 = setInterval(function () {
-
-          $("#prosess01 .finish").css("width", i + "%");
-          i++;
-          if (i > per01) {
-            clearInterval(timer01);
-          }
-        }, 10);
-
-        let timer02 = setInterval(function () {
-          $("#prosess02 .finish").css("width", i + "%");
-          i++;
-          if (i > per02) {
-            clearInterval(timer02);
-          }
-        }, 10);
-
-        let timer03 = setInterval(function () {
-          $("#prosess03 .finish").css("width", i + "%");
-          i++;
-          if (i > per03) {
-            clearInterval(timer03);
-          }
-        }, 10);
-      }
     }
   }
 </script>

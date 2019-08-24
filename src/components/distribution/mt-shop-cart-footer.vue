@@ -7,7 +7,7 @@
         <div class="mt-shop-cart-footer-right">
             <p>
                 <span>总合计<i>￥{{data | total}}</i></span>
-                <span>总优惠<i style="font-size:0.1rem;">￥{{data.totalSjg}}</i></span>
+                <span>总优惠<i style="font-size:0.1rem;">￥{{data.totalPriceSjg}}</i></span>
             </p>
             <p>
                 <span>一键结算</span>
@@ -36,8 +36,8 @@ export default {
         *  */
        numOfCal(shopCarInfo){
            let num = 0;
-            shopCarInfo.shops.forEach((shop,sid) => {
-                shop.products.forEach((product,pid)=>{
+            shopCarInfo.shop_info.forEach((shop,sid) => {
+                shop.shop_goods.forEach((product,pid)=>{
                     if(product.checked){
                         num++;
                     }
@@ -45,23 +45,26 @@ export default {
             });
             return num;
        },
+       /**
+        * 计算商品的总的价格
+        *  */
         total(shopCarInfo){
            let totals = 0;
            let num = 0;
            let price = 0;
-            shopCarInfo.shops.forEach((shop,sid) => {
+            shopCarInfo.shop_info.forEach((shop,sid) => {
                 let index = 0;
-                shop.products.forEach((product,pid)=>{
+                shop.shop_goods.forEach((product,pid)=>{
                     if(product.checked){
-                        price += product.productPrice * product.productNum;
+                        price += product.goods_end * product.goods_num;
                     }
                 })
-                price = price + shop.PackingFee + shop.DistributionFee;
-                for(var i in shop.price){
-                    if(price > shop.price[i].total){
+                price = price + shop.shop_dellvery + shop.goods_translate;
+                for(var i in shop.attrs){
+                    if(price > shop.price[i].full){
                         let a = Number(i)+1;
                         if(a <= 4){
-                            if(price < shop.price[a].total){
+                            if(price < shop.price[a].full){
                                 index = i;
                             }
                         }else{
@@ -69,15 +72,12 @@ export default {
                         }
                     }
                 }
-                 num+=shop.price[index].totalJg;
+                 num+=shop.price[index].minus;
                  index=0;
                  totals += price;
                  price = 0;
-                let a= shop.DistributionFeeSjg-shop.DistributionFee;
-                let b = shop.PackingFeeSjg-shop.PackingFee;
-                 num = num + a + b;
             })
-            shopCarInfo.totalSjg = num;
+            shopCarInfo.totalPriceSjg = num;
             totals = totals - num;
             return totals;
        }

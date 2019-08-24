@@ -1,7 +1,7 @@
 <template>
   <div class="mt-detail-header">
     <div class="head-img">
-      <img :src="data.banImg"/>
+      <img :src="data.foodImg.url"/>
     </div>
     <div class="head-icon">
      <div class="head-icon-left" @click="mtDtHeaderBack()">
@@ -23,16 +23,16 @@
     </div>
     <div class="head-info">
       <div class="head-name">
-        <p><span>招牌</span>{{data.name}}</p>
+        <p><span>招牌</span>{{data.foodName}}</p>
         <p><i class="iconfont icon-icon--share"></i></p>
       </div>
       <div class="head-sale">
-        月售{{data.sale}}
-        配送{{data.time}}
+        月售{{data.foodSale}}
+        配送约{{Pcheck.nearbyShopTime}}分钟
       </div>
       <div class="head-price">
         <p>
-          <span>{{data.sjg}}</span>&nbsp;<s>{{data.jg}}</s>&nbsp;<b>{{data.zhe}}&nbsp;限{{data.xian}}份</b>
+          <span>￥{{data.foodPrice}}</span>&nbsp;&nbsp;<b>&nbsp;限{{data.foodNum}}份</b>
         </p>
         <a href="#">
           <i class="iconfont icon-jiahao"></i>加入购物车
@@ -45,7 +45,7 @@
 <script>
   export default {
     name: "dtHeader",
-    props:["data"],
+    props:["data","Pcheck"],
     methods:{
       _onscroll:function(){
         var _top = document.body.scrollTop || document.documentElement.scrollTop;
@@ -54,7 +54,8 @@
         }
       },
       mtDtHeaderBack(){
-        history.back()      }
+        history.back()      
+      }
     }
   }
 </script>

@@ -7,23 +7,24 @@ const baseUrl = "http://39.100.63.237:8000"
 //模拟数据
 const UrlData = "http://localhost:3000"
 
-//获取主页的接口地址
+//获取主页的接口地址     已经接入
 const CARTURL = `${baseUrl}/api/index/`
 
 //详情页面接口地址
 const DETAIL = `${UrlData}/api/detail`
 
-//购物车
-const SHOPCART = `${baseUrl}/api/cart/cartlist/?userId=1`
+//购物车        已经接入
+const SHOPCART = `${baseUrl}/api/cart/cartlist/?userId=2`
 
 //获取订单接口地址
 const ordUrl = `${UrlData}/api/order`;
 
-//获取cartinfo的接口地址
+//获取cartinfo的接口地址           已经接入
 const CARTINFO = `${baseUrl}/api/orders/orders/?userId=1`;
 
-//获取附近商铺列表接口地址
+//获取附近商铺列表接口地址           已经接入
 const NEARBYSHOPLIST = `${baseUrl}/api/shops/shop/?shopId=`;
+// const NEARBYSHOPLIST = `${UrlData}/api/shopid=`;
 
 //获取附近商铺列表接口地址
 const CLASSIFCATIONS = `${UrlData}/api/classifcations`;

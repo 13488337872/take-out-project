@@ -12,21 +12,21 @@
             <div id="prosess01" class="prosess01">
               <div class="finish"></div>
             </div>
-            <span>{{data.tu}}</span>
+            <span>90%</span>
           </div>
           <div class="prosess">
             分量满意度
             <div id="prosess02" class="prosess01">
               <div class="finish"></div>
             </div>
-            <span>{{data.tu}}</span>
+            <span>70%</span>
           </div>
           <div class="prosess">
             食材新鲜度
             <div id="prosess03" class="prosess01">
               <div class="finish"></div>
             </div>
-            <span>{{data.tu}}</span>
+            <span>80%</span>
           </div>
         </div>
         <div class="pgBar-des">
@@ -35,19 +35,15 @@
         </div>
       </div>
     </div>
-    <mt-product-goodlist :data="data.elvalist"></mt-product-goodlist>
   </div>
 </template>
 
 <script>
   // import $ from 'jquery'
-  import mtGoodlist from './mtGoodlist'
 
   export default {
     name: "mtElava",
-    props:["data"],
     components:{
-      "mt-product-goodlist":mtGoodlist
     }
   }
 </script>

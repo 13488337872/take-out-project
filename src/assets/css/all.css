@@ -78,9 +78,8 @@ body{
 }
 .all-meal-le,.all-meal-ri{
     margin-right: .1rem;
-
-    
-
+    height: inherit;
+    background-color: #fff;
 }
 
 

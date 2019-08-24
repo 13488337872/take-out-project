@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <index-loading v-if="mtcartloading"></index-loading> 
+  <div v-else>
     <mt-shopping-cart-top></mt-shopping-cart-top>
-    <mt-shopping-cart-center :pCheck="productCheckAll" :sCheck="shopCheckAll"  v-if="shopCarInfo.shops" :data="shopCarInfo.shops"></mt-shopping-cart-center>
+    <mt-shopping-cart-center :goods_del="disappear" :pCheck="productCheckAll" :sCheck="shopCheckAll"  v-if="shopCarInfo.shop_info" :data="shopCarInfo.shop_info"></mt-shopping-cart-center>
     <mt-shopping-cart-btm></mt-shopping-cart-btm>
     <mt-shop-cart-footer @checkedAll="checkAll" v-if="shopCarInfo" :data="shopCarInfo"></mt-shop-cart-footer>
   </div>
@@ -11,34 +12,42 @@
 import mtshoppingcarttop from "../components/distribution/mt-shopping-cart-top";
 import mtshoppingcartcenter from "../components/distribution/mt-shopping-cart-center";
 import mtshoppingcartbtm from "../components/distribution/mt-shopping-cart-btm";
-import mtshopcartfooter from '../components/distribution/mt-shop-cart-footer'
+import mtshopcartfooter from '../components/distribution/mt-shop-cart-footer';
+import loading from "../components/common/loading";
 import index from '../apis/index.js'
+import axios from "axios";
+
 export default {
   "name":"",
   data:function(){
     return {
-      shopCarInfo:{}
+      shopCarInfo:{},
+      mtcartloading:true
     }
   },
   components: {
     "mt-shopping-cart-top": mtshoppingcarttop,
     "mt-shopping-cart-center": mtshoppingcartcenter,
     "mt-shopping-cart-btm": mtshoppingcartbtm,
-    "mt-shop-cart-footer":mtshopcartfooter
+    "mt-shop-cart-footer":mtshopcartfooter,
+    "indexLoading": loading
   },
   created:function(){
-    this._initPageData();
+    this._initPagcarteData();
   },
   methods:{
     /***
      * 获取shopCartInfo所有的数据
      * 
      *  */
-     _initPageData() {
-        index.getMtShopCar(data => {
-          console.log(data)
-          this.shopCarInfo = data;
-        })
+     _initPagcarteData() {
+       setTimeout(()=>{
+          index.getMtShopCar((data) => {
+            console.log(data)
+            this.shopCarInfo = data;
+              this.mtcartloading = false
+          })
+        },1000)
       },
     /**
      * 总体的全选与反选
@@ -58,21 +67,22 @@ export default {
    * 店铺的全选与反选
    */
     shopCheckAll(sid){
-      let checkeds = this.shopCarInfo.shops[sid].checked;
+      let checked = this.shopCarInfo.shops[sid].checked;
       /**
        * 根据店铺修改的商品的选取状态
        */
       this.shopCarInfo.shops[sid].products.forEach((product,sid)=>{
-        product.checked = checkeds;
+        product.checked = checked;
       })
       /**
        * 购物车的选中状态
        * 只要有一个店铺checked为false,全选的就为false
       //  */
-      let ischecked = this.shopCarInfo.shops.every((shop,sid,arr)=>{
+      let isChecked = this.shopCarInfo.shops.every((shop,sid,arr)=>{
           return shop.checked == true;
       })
-      this.shopCarInfo.checked = ischecked;
+      console.log(isChecked)
+      this.shopCarInfo.checked = isChecked;
     },
     
     /**
@@ -86,7 +96,6 @@ export default {
           return product.checked == true
           
       }) 
-      console.log(isChecked);
        //当前的店铺的状态
         this.shopCarInfo.shops[sid].checked = isChecked;
 
@@ -95,7 +104,30 @@ export default {
           return shop.checked == true
         })
         this.shopCarInfo.checked = isCheck;
-    }
+    },
+    disappear(sid,pid,userId,goodsId){
+      console.log(sid)
+      console.log(pid)
+      this.$axios({
+        method: "post",
+        url: "http://39.100.63.237:8000/api/cart/cartlist/sub_cart/",
+        data: {
+          userId: userId,
+          goodsId: goodsId
+        }
+      }).then(res => {
+        console.log(res);
+      });
+
+      // this.shopCartInfo.shop_info[sid].shop_goods.forEach((goodsId,pid)=>{
+      //     console.log(goodsId)
+      // })
+
+      this.shopCarInfo.shop_info[sid].shop_goods.splice(pid,1);
+
+      
+		  
+	  }
   }
 }
 </script>

@@ -60,14 +60,14 @@ export default {
       //发送验证码按键函数
       this.$axios({
         method: "post",
-        url: "http://10.35.170.75:8000/logintel/",
+        url: "http://39.100.63.237:8000/api/login/",
         data: {
           sendmsg: 1,
           user_tel: this.user_tel
         }
       }).then(res => {
         let rs = res.data;
-        alert(res.data.message);
+        console.log(res.data.message);
         this.msg_wrong_span = res.data.message
       });
     },
@@ -76,7 +76,7 @@ export default {
       //登录按键函数
       this.$axios({
         method: "post",
-        url: "http://10.35.170.75:8000/logintel/",
+        url: "http://39.100.63.237:8000/api/login/",
         data: {
           dosubmit: 1,
           user_tel: this.user_tel,
@@ -84,8 +84,10 @@ export default {
         }
       }).then(res => {
         let rs = res.data.status;
-        alert(res.data.info);
+        console.log(res.data.info);
         this.mt_message = res.data.info
+        localStorage.setItem("user_tel",res.data.info)
+        localStorage.setItem("userId",rs)
       });
     }
   }
