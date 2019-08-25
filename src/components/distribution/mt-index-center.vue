@@ -17,7 +17,7 @@
       </div>
       <!-- 菜单 -->
       <div class="menu">
-        <li v-for="(item,pid) in data.menu" :key="pid" @click="skip(pid)">
+        <li v-for="(item,pid) in data.menu" :key="pid" @click="skip(pid,data.nearbyShop)">
 			<img :src="item.navPic" />
 			<p>{{item.navName}}</p>
         </li>
@@ -63,13 +63,18 @@ export default {
           path:'./shoppingcart'
     })
 	},
-    skip: function(item) {
+    skip: function(item,data) {
       console.log(item);
+      data.forEach(nearbyShopType=>{
+        console.log(nearbyShopType)
+        let shopType = nearbyShopType
+      })
       if (item == 0) {
         this.$router.push({
           path:'/mtIndexAfternoontea',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:shopType
           }
         })
       }
@@ -77,7 +82,8 @@ export default {
         this.$router.push({
           path:'/mtindexhamburger',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -85,7 +91,8 @@ export default {
         this.$router.push({
           path:'/mtindexcooking',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -93,7 +100,8 @@ export default {
         this.$router.push({
           path:'/mtindexsnack',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -101,7 +109,8 @@ export default {
         this.$router.push({
           path:'/jmpsf',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -109,7 +118,8 @@ export default {
         this.$router.push({
           path:'/jtlm',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -117,7 +127,8 @@ export default {
         this.$router.push({
           path:'/mtzs',
           query:{
-          menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -125,7 +136,8 @@ export default {
         this.$router.push({
           path:'/orderform',
           query:{
-            menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }
@@ -133,7 +145,8 @@ export default {
         this.$router.push({
           path:'/allClassifications',
           query:{
-            menuId:item
+            menuId:item,
+            shopList:data
           }
         })
       }

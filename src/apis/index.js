@@ -34,6 +34,9 @@ const AFTURL = `${UrlData}/api/mtindexhamburger`
 const COOKURL = `${UrlData}/api/mtindexcooking`
 const SNACKURL = `${UrlData}/api/mtindexsnack`
 
+///api/shops/search/?shopstart=小
+//搜索
+const MTSEARCH = `${baseUrl}/api/shops/search/?shopstart=`;
 
 
 export default {
@@ -82,6 +85,9 @@ export default {
   },
   getSnackInfoBySnackId(cb) {
       Api.get(SNACKURL, cb)
+  },
+  getMtInfoSearch(matters,cb) {
+    Api.get(`${MTSEARCH}${matters}`, cb)
   }
 }
 

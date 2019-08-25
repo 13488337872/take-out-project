@@ -2,14 +2,19 @@
 		<div class="Search_">
 		<div class="Search_header">
 			<span class="iconfont icon-cx"></span>
-			<input class="input_search" type="text" placeholder="东北水饺馆 满20减16"/>
+			<input class="input_search" type="text" v-model="searchInquire" @input="mtSearch(searchInquire)" placeholder="东北水饺馆 满20减16"/>
 		</div>
 		<a @click="backuplevel()">取消</a>
 	</div>
 </template>
-
 <script>
 export default{
+	props:["mtSearch"],
+	data() {
+		return {
+			
+		}
+	},
 	methods: {
 		backuplevel(){
 			history.back()
@@ -46,10 +51,10 @@ html{
 }
 .Search_header .input_search{
 	width: 2.635rem;
-	height: .15rem;
+	height: .34rem;
 	border: 0;
 	background: #f1f1f1;
-	margin: auto 0;
+	outline: none;
 }
 .Search_ a{
 	font-size: .14rem;

@@ -228,7 +228,6 @@ nav li:first-child img{
 	color: #f1a243;
 }
 .shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(4){
-	display: flex;
 	justify-content: space-around;
 }
 .shoplist .shoplist-shop .shoplist-shop-c p:nth-of-type(4) span{

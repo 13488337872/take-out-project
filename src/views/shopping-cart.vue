@@ -4,7 +4,6 @@
     <mt-shopping-cart-top></mt-shopping-cart-top>
     <mt-shopping-cart-center :goods_del="disappear" :pCheck="productCheckAll" :sCheck="shopCheckAll"  v-if="shopCarInfo.shop_info" :data="shopCarInfo.shop_info"></mt-shopping-cart-center>
     <mt-shopping-cart-btm></mt-shopping-cart-btm>
-    <mt-shop-cart-footer @checkedAll="checkAll" v-if="shopCarInfo" :data="shopCarInfo"></mt-shop-cart-footer>
   </div>
 </template>
 
@@ -12,7 +11,6 @@
 import mtshoppingcarttop from "../components/distribution/mt-shopping-cart-top";
 import mtshoppingcartcenter from "../components/distribution/mt-shopping-cart-center";
 import mtshoppingcartbtm from "../components/distribution/mt-shopping-cart-btm";
-import mtshopcartfooter from '../components/distribution/mt-shop-cart-footer';
 import loading from "../components/common/loading";
 import index from '../apis/index.js'
 import axios from "axios";
@@ -29,7 +27,6 @@ export default {
     "mt-shopping-cart-top": mtshoppingcarttop,
     "mt-shopping-cart-center": mtshoppingcartcenter,
     "mt-shopping-cart-btm": mtshoppingcartbtm,
-    "mt-shop-cart-footer":mtshopcartfooter,
     "indexLoading": loading
   },
   created:function(){
@@ -118,15 +115,10 @@ export default {
       }).then(res => {
         console.log(res);
       });
-
-      // this.shopCartInfo.shop_info[sid].shop_goods.forEach((goodsId,pid)=>{
-      //     console.log(goodsId)
-      // })
-
+      if(this.shopCarInfo.shop_info[sid].shop_goods.length==1){
+        this.shopCarInfo.shop_info.splice(sid,1);
+      }
       this.shopCarInfo.shop_info[sid].shop_goods.splice(pid,1);
-
-      
-		  
 	  }
   }
 }

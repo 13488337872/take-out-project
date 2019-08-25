@@ -1,26 +1,23 @@
 <template>
   <div class="shoplist">
-    <div class="shoplist-shop">
-      <img src="/img/shoplist-img01.jpg" alt />
+    <div class="shoplist-shop" v-for="(item,key) in data" :key="key">
+      <img :src=item.nearbyShopPic alt />
       <div class="shoplist-shop-c">
-        <p>东仔烤肉饭（鸡排饭）</p>
+        <p>{{item.nearbyShopName}}</p>
         <p>省配送费</p>
         <p>
-          <span>4.3</span>
+          <span>{{item.nearbyShopStar}}</span>
 
-          <span>月售1382</span>
-          <span>中式简餐</span>
+          <span>月售{{item.nearbyShopSale}}</span>
+          <span>{{item.nearbyShopType}}</span>
         </p>
         <p>
-          <span>10减6</span>
-          <span>10减6</span>
-          <span>10减6</span>
-          <span>10减6</span>
+          <span v-for="(pMiting,pid) in item.nearbyShopMitig" :key="pid">{{pMiting.full}}减{{pMiting.minus}}</span>
         </p>
       </div>
       <div class="shoplist-shop-ri">
         <span class="icon iconfont icon-daohangdizhiweizhi"></span>
-        <span>352m</span>
+        <span>{{item.nearbyShopDistance}}</span>
         <img src="/img/shoplist-ddzqu.jpg" alt />
         <span class="icon iconfont icon-xiala"></span>
       </div>
@@ -28,7 +25,9 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props:["data"]
+};
 </script>
 <style scoped>
 </style>

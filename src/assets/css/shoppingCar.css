@@ -163,7 +163,8 @@ em{
 .cnlike{
     box-sizing: border-box;
     padding: .31rem .12rem 0;
-    background: #f2f2f2
+    background: #f2f2f2;
+    height: inherit;
 }
 /* title */
 .cnlike .cnlike-tit{

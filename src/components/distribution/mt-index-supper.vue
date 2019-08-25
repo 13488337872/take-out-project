@@ -12,7 +12,7 @@
     <div class="optList">
       <li v-for="(opt,sid) in data.optList" :key="sid">
         <img :src="opt.optPic" alt />
-        <h4></h4>
+        <h4>{{opt.optName}}</h4>
         <p>
           {{opt.optRecom}}
           <img src="/img/del.png" alt />
@@ -36,4 +36,9 @@ export default {
 
 
 <style scoped>
+.optList h4{
+      white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 </style>

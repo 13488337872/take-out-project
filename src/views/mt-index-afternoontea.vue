@@ -3,7 +3,7 @@
         <mt-index-afternoontea-hd></mt-index-afternoontea-hd>
         <mt-index-afternoontea-pizza :data="mtaft.afternoontealist"></mt-index-afternoontea-pizza>
         <mt-index-afternoontea-pizza-olist :data="mtaft.afternoontearows"></mt-index-afternoontea-pizza-olist>
-        <mt-order-form-content-shoplist></mt-order-form-content-shoplist>
+        <mt-order-form-content-shoplist :data=data></mt-order-form-content-shoplist>
     </div>
 </template>
 <script>
@@ -19,6 +19,7 @@ export default {
                 mtaft:{}
             }
         },
+        props:["data"],
     components:{
         "mt-index-afternoontea-hd":mtIndexAfternoonteaHd,
         "mt-index-afternoontea-pizza":mtIndexAfternoonteaPizza,

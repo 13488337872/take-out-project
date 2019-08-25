@@ -191,6 +191,7 @@ body>div{
 	overflow: hidden;
 	border-radius: .06rem;
 	margin-bottom: .05rem;
+	width: 48%;
 }
 .optList li img{
 	width: 1.695rem;
@@ -314,6 +315,7 @@ body>div{
 .nearbyShopsTOP p{
 	color: #666460;
 	font-size: .12rem;
+	text-align: center;
 }
 .nearbyShopsTOP p span{
 	margin:0 .25rem;

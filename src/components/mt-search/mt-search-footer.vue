@@ -1,24 +1,21 @@
 <template>
 	<div class="Find_Huanyipi">
-		<a class="red">必胜客</a>
-		<a>正新鸡排</a>
-		<a>炒饭</a>
-		<a>炒米粉</a>
-		<a>奶茶</a>
-		<a>蛋糕</a>
-		<a>汉堡</a>
-		<a>水果捞</a>
-		<a>砂锅</a>
-		<a>魏家凉皮</a>
-		<a>麻辣烫</a>
-		<a>粥</a>
-		<a>螺蛳粉</a>
-		<a>披萨</a>
-		<a>coco</a>
+		<a class="red" v-for="(item,key) in searchList" :key="key">{{item}}</a>
 	</div>
 </template>
 
 <script>
+export default {
+	data() {
+		return {
+			searchList:["必胜客","正新鸡排","炒饭","炒米粉","奶茶",
+					"蛋糕","汉堡","水果捞","砂锅","魏家凉皮","麻辣烫",
+					"粥","螺蛳粉","披萨","coco"
+			
+				]
+		}
+	},
+}
 </script>
 
 <style scoped>
@@ -94,7 +91,7 @@
 		margin-bottom: .12rem;
 		margin-right: .07rem;
 	}
-	.Find_Huanyipi .red{
+	.Find_Huanyipi .red:first-child{
 		color: #c88c8c;
 	}
 </style>
