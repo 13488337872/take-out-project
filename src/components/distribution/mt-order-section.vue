@@ -2,22 +2,22 @@
   <div class="mt-order-section" v-if="mtorderhas">
     <div class="taking_section_store" v-for="(item,key) in data" :key="key">
       <div class="taking_store_top">
-        <img :src="item.orderimg" alt />
+        <img :src="item.shopimg" alt />
         <div class="store_top_cen">
-          <p>{{item.ordername}} ></p>
-          <span
-            v-for="(fullMinus,pid) in item.orderspan"
+          <p @click="orderGoShop(item.shopId)"><span>{{item.shopname}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></p>
+          <p
+            v-for="(fullMinus,pid) in item.shopFoodList"
             :key="pid"
-          >{{fullMinus.full}}减{{fullMinus.minus}}</span>
+          >{{fullMinus.foodName}}   *{{fullMinus.foodNum}}</p>
         </div>
+        
         <div class="store_top_rig">
-          <h4>订单已完成</h4>
+          <h4>{{item.status}}</h4>
         </div>
       </div>
       <div class="taking_store_bot">
         <div class="store_bot_tit">
-          <p>{{item.orderproduct}}</p>
-          <span>{{item.orderprice}}</span>
+          <span>{{item.o_time}}</span>
         </div>
         <div class="store_bot_span">
           <span>相似商家</span>
@@ -41,10 +41,20 @@ export default {
   },
   data() {
     return {
-      mtorderhas:false
+      mtorderhas:true
     }
   },
-  props: ["data"]
+  props: ["data"],
+  methods: {
+    orderGoShop(shopid){
+      console.log(shopid)
+      this.$router.push({
+        path:"/shopdetail",query:{
+            shopId:shopid
+        }
+      })
+    }
+  },
 };
 </script>
 
@@ -72,13 +82,11 @@ export default {
 }
 .taking_section_store {
   width: 3.51rem;
-  height: 1.68rem;
   background: #fafafa;
   margin: 0.1rem auto;
   border-radius: 0.09rem;
 }
 .taking_store_top {
-  height: 0.38rem;
   width: 3.29rem;
   margin: 0 auto;
   padding: 0.15rem 0 0.12rem 0;
@@ -89,22 +97,20 @@ export default {
   width: 0.36rem;
   height: 0.36rem;
 }
+.store_top_cen p:first-child{
+  color: black;
+}
 .store_top_cen p {
   font-size: 0.13rem;
+  margin-bottom: .15rem;
+  color: #949494;
 }
 .store_top_cen span {
-  font-size: 0.09rem;
-  color: #fb4e44;
-  width: 0.42rem;
-  height: 0.16rem;
+  width: 1.5rem;
   display: inline-block;
-  border: 1px solid #fb4e44;
-  text-align: center;
-  line-height: 0.16rem;
-  border-radius: 0.02rem;
-  float: left;
-  margin-right: 0.05rem;
-  margin-top: 0.08rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .store_top_cen {
   margin-right: 0.42rem;
@@ -124,7 +130,6 @@ export default {
   width: 3.39rem;
   height: 0.84rem;
   padding-right: 0.12rem;
-  padding-top: 0.18rem;
   border-radius: 0 0 0.09rem 0.09rem;
 }
 .store_bot_tit {

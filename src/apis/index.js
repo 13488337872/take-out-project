@@ -14,13 +14,13 @@ const CARTURL = `${baseUrl}/api/index/`
 const DETAIL = `${UrlData}/api/detail`
 
 //购物车        已经接入
-const SHOPCART = `${baseUrl}/api/cart/cartlist/?userId=2`
+const SHOPCART = `${baseUrl}/api/cart/cartlist/?userId=`
 
 //获取订单接口地址
 const ordUrl = `${UrlData}/api/order`;
 
 //获取cartinfo的接口地址           已经接入
-const CARTINFO = `${baseUrl}/api/orders/orders/?userId=1`;
+const CARTINFO = `${baseUrl}/api/orders/orders/?userId=`;
 
 //获取附近商铺列表接口地址           已经接入
 const NEARBYSHOPLIST = `${baseUrl}/api/shops/shop/?shopId=`;
@@ -52,16 +52,16 @@ export default {
     Api.get(DETAIL,cb)
   },
 
-  getMtShopCar(cb){
-    Api.get(SHOPCART,cb)
+  getMtShopCar(userId,cb){
+    Api.get(`${SHOPCART}${userId}`,cb)
   },
 
   getOrder(cb){
     Api.getter(ordUrl,cb)
   },
 
-  getOrderInfoByOrderId(cb){
-    Api.get(CARTINFO,cb)
+  getOrderInfoByOrderId(userId,cb){
+    Api.get(`${CARTINFO}${userId}`,cb)
   },
   
   getNearbyShopList(shopId,cb){

@@ -155,7 +155,7 @@ export default {
 }
 .addShoppingCart{
 	font-weight: 500;
-	background-color:#f7c85e; 
+	background-color:#f7c85e;
 	line-height: 0.2rem;
     height: .2rem;
     padding: 0 .05rem;

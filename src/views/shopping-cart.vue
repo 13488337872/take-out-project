@@ -1,9 +1,11 @@
 <template>
-  <index-loading v-if="mtcartloading"></index-loading> 
-  <div v-else>
+  <div> 
     <mt-shopping-cart-top></mt-shopping-cart-top>
-    <mt-shopping-cart-center :goods_del="disappear" :pCheck="productCheckAll" :sCheck="shopCheckAll"  v-if="shopCarInfo.shop_info" :data="shopCarInfo.shop_info"></mt-shopping-cart-center>
-    <mt-shopping-cart-btm></mt-shopping-cart-btm>
+    <mt-order-fail v-if="mtcartloading"></mt-order-fail>
+    <div  v-else>
+      <mt-shopping-cart-center :goods_del="disappear" :pCheck="productCheckAll" :sCheck="shopCheckAll"  v-if="shopCarInfo.shop_info" :data="shopCarInfo.shop_info"></mt-shopping-cart-center>
+      <mt-shopping-cart-btm></mt-shopping-cart-btm>
+    </div>
   </div>
 </template>
 
@@ -11,41 +13,46 @@
 import mtshoppingcarttop from "../components/distribution/mt-shopping-cart-top";
 import mtshoppingcartcenter from "../components/distribution/mt-shopping-cart-center";
 import mtshoppingcartbtm from "../components/distribution/mt-shopping-cart-btm";
-import loading from "../components/common/loading";
+import mtOrderFail from "../components/distribution/mt-order-cart";
 import index from '../apis/index.js'
 import axios from "axios";
-
 export default {
   "name":"",
   data:function(){
     return {
       shopCarInfo:{},
-      mtcartloading:true
+      mtcartloading:true,
+      userId:localStorage.getItem("userId")
     }
   },
   components: {
     "mt-shopping-cart-top": mtshoppingcarttop,
     "mt-shopping-cart-center": mtshoppingcartcenter,
     "mt-shopping-cart-btm": mtshoppingcartbtm,
-    "indexLoading": loading
+    "mt-order-fail": mtOrderFail
   },
   created:function(){
-    this._initPagcarteData();
+    console.log(localStorage.getItem("userId"))
+    this._initPagcarteData(this.userId);
   },
   methods:{
     /***
      * 获取shopCartInfo所有的数据
      * 
      *  */
-     _initPagcarteData() {
-       setTimeout(()=>{
-          index.getMtShopCar((data) => {
+    _initPagcarteData(userId) {
+      setTimeout(()=>{
+          index.getMtShopCar(userId,data => {
             console.log(data)
-            this.shopCarInfo = data;
+            if(data.shop_info.length==0){
+              this.mtcartloading = true
+            }else{
+              this.shopCarInfo = data;
               this.mtcartloading = false
+            }
           })
-        },1000)
-      },
+      },1000)
+    },
     /**
      * 总体的全选与反选
      *  */

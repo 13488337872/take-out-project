@@ -31,7 +31,7 @@
 	    <p class="shopping-bottom-p shopping-bottom-p2">
 	      <span class="shopping-bottom-cost shopping-bottom-p2-sp1">{{data | shopTotalPrcie}}</span>
 	      <span class="shopping-bottom-p2-sp2"
-		  @click="settleAccounts(data.goods_price,data.shop_id,data.shop_goods)">
+		  @click="settleAccounts(data.shop_allPrice,data.shop_id,data.shop_goods)">
 		  去结算</span>
 	    </p>
 	  </div>
@@ -45,22 +45,20 @@ export default {
 	data:function(){
 		return{
 			isShow:true,
-			good:[]
+			good:[],
+			userId:localStorage.getItem("userId")
 		}
 	},
 	mounted() {
 	},
 	methods: {
 		settleAccounts(goodPrice,shopId,good){
-			console.log(goodPrice,shopId,good)
+			console.log(goodPrice,shopId,good,this.userId)
 			for(let i = 0;i<good.length;i++){
-				console.log(good[i].goods_id)
-				console.log(good[i].goods_num)
 				let info = {
 					goodsId:good[i].goods_id,
 					goodNum:good[i].goods_num
 				}
-				console.log(info)
 				this.good.push(info)
 			}
 			this.$axios({
